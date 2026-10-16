@@ -4,14 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>WUHO BEAUTY 우호뷰티 | Quick Waxing Studio · 시흥 배곧 왁싱</title>
-<meta name="description" content="Quick waxing, crafted by skill. 시흥 배곧 우호뷰티. 하드 · 슈가링 · 소프트 맞춤 왁싱, 퀵 브라질리언, 디자인 뒷목 · 헤이눈 왁싱, 웨딩 왁싱, FLOHA 하드 인증교육센터." />
+<meta name="description" content="시흥 배곧 우호뷰티. 기술을 시술하고, 그 기술을 교육합니다. 퀵 브라질리언, 디자인 뒷목 · 헤이눈 왁싱, 웨딩 패키지, FLOHA 인증교육기관 수강 커리큘럼." />
 <link rel="canonical" href="https://wuhobeauty-sample.lgt3232.workers.dev/" />
 <meta name="theme-color" content="#FFFFFF" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:site_name" content="WUHO BEAUTY" />
 <meta property="og:title" content="WUHO BEAUTY 우호뷰티 | Quick Waxing Studio" />
-<meta property="og:description" content="Quick waxing, crafted by skill. 시흥 배곧 퀵 브라질리언 · 디자인 왁싱." />
+<meta property="og:description" content="우호뷰티는 기술을 시술하고, 그 기술을 교육합니다. 시흥 배곧 퀵왁싱 · 디자인 왁싱 · FLOHA 교육." />
 <meta property="og:url" content="https://wuhobeauty-sample.lgt3232.workers.dev/" />
 <meta property="og:image" content="https://wuhobeauty-sample.lgt3232.workers.dev/og-wuho.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@
   "url": "https://wuhobeauty-sample.lgt3232.workers.dev/",
   "image": "https://wuhobeauty-sample.lgt3232.workers.dev/og-wuho.jpg",
   "telephone": "+82-507-1369-8370",
-  "description": "시흥 배곧 왁싱. 하드 · 슈가링 · 소프트 맞춤 왁싱과 퀵 브라질리언, FLOHA 하드 인증교육센터.",
+  "description": "시흥 배곧 왁싱. 하드 · 소프트 · 슈가링 · 슈가페이스트 맞춤 왁싱과 퀵 브라질리언, FLOHA 인증교육기관.",
   "address": { "@type": "PostalAddress", "streetAddress": "서울대학로278번길 61 S동 4층 404호", "addressLocality": "시흥시", "addressRegion": "경기도", "addressCountry": "KR" },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "21:00" },
@@ -104,12 +104,20 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .hero .wrap{ display:grid; gap:40px; position:relative; }
 .kicker{ display:flex; align-items:center; gap:10px; }
 .kicker::before{ content:""; width:22px; height:8px; border-radius:4px; background:var(--grad); border:1px solid var(--blush-2); }
-.hero h1{ font-size:clamp(3rem,8.2vw,6.4rem); line-height:1; margin:26px 0 0; }
-.hero h1 em{ font-style:normal; display:block; padding-left:.9em; }
-.hero .ko-t{ font-size:1.05rem; color:var(--ink); margin-top:26px; }
-.hero .lead{ margin:14px 0 30px; }
+/* 원장 프로필 카드 (v0.2 사장님 요청: 증명사진처럼 작게) */
+.profile{ margin-top:24px; padding:clamp(22px,3vw,34px); background:rgba(255,255,255,.72); border:1px solid var(--blush-2); border-radius:4px; }
+.profile-top{ display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:center; }
+.profile-top img{ width:104px; height:auto; aspect-ratio:3/4; object-fit:cover; border:1px solid var(--line); border-radius:2px; background:var(--blush-soft); }
+.profile .name{ margin:0; font-size:1.35rem; font-weight:500; line-height:1.3; }
+.profile .name small{ font-size:.92rem; font-weight:400; color:var(--soft); margin-left:6px; }
+.profile .cred{ margin:6px 0 0; font-size:.86rem; color:var(--soft); }
+.hero h1{ font-family:var(--sans); font-weight:500; font-size:clamp(1.6rem,3.4vw,2.35rem); line-height:1.4; letter-spacing:-.02em; margin:28px 0 0; }
+.points{ margin:18px 0 26px; padding:0; list-style:none; display:grid; gap:6px; font-size:.95rem; }
+.points li{ position:relative; padding-left:16px; }
+.points li::before{ content:""; position:absolute; left:0; top:.85em; width:7px; height:1px; background:var(--ink); }
 .cta{ display:flex; flex-wrap:wrap; gap:10px; }
-.hero-meta{ display:flex; flex-wrap:wrap; gap:8px 26px; margin:38px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:.8rem; color:var(--soft); }
+@media (min-width:600px){ .profile-top img{ width:120px; } }
+.hero-meta{ display:flex; flex-wrap:wrap; gap:8px 26px; margin:30px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:.8rem; color:var(--soft); }
 .hero-meta b{ font-weight:500; color:var(--ink); margin-right:6px; }
 .slides{ position:relative; margin:0; aspect-ratio:4/5; overflow:hidden; background:var(--blush-soft); }
 .slides img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.04); transition:opacity 1.4s ease, transform 6s ease; }
@@ -126,59 +134,36 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 @media (min-width:900px){ .head.split{ grid-template-columns:1fr 1fr; align-items:end; gap:60px; } }
 
 
-/* 강조 띠 (사장님 요청: 시그니처 · FLOHA 하드지부장 · 임산부 인증 · 3가지 왁싱 · 수강) */
-.hl{ background:var(--grad); border-top:1px solid var(--blush-2); border-bottom:1px solid var(--blush-2); }
-.hl ul{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2,1fr); }
-.hl li a{ display:flex; flex-direction:column; gap:4px; height:100%; padding:22px 16px; border-right:1px solid rgba(30,26,27,.1); border-bottom:1px solid rgba(30,26,27,.1); transition:background .3s ease; }
-.hl li b{ font-family:var(--disp); font-weight:400; font-size:1.2rem; line-height:1.2; }
-.hl li span{ font-size:.82rem; color:var(--soft); }
-@media (hover:hover){ .hl li a:hover{ background:rgba(255,255,255,.55); } }
-@media (min-width:900px){ .hl ul{ grid-template-columns:repeat(5,1fr); } .hl li a{ padding:28px 22px; border-bottom:0; } .hl li:last-child a{ border-right:0; } }
-
-/* 시그니처 3 */
-.sig3{ display:grid; gap:18px; }
-.sig3 article{ background:var(--white); border:1px solid var(--line); display:flex; flex-direction:column; }
-.sig3 figure{ margin:0; overflow:hidden; background:var(--blush-soft); }
-.sig3 img{ width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform 1.2s ease; }
-.sig3 .body{ flex:1; padding:20px 20px 22px; display:flex; flex-direction:column; gap:8px; }
-.sig3 h3{ font-size:1.7rem; line-height:1.15; }
-.sig3 h3 small{ display:block; font-family:var(--sans); font-size:.86rem; color:var(--soft); margin-top:6px; }
-.sig3 p{ margin:0; font-size:.88rem; color:var(--soft); }
-.sig3 .pr{ display:flex; justify-content:space-between; align-items:baseline; padding-top:12px; margin-top:auto; border-top:1px solid var(--line); font-family:var(--disp); font-size:1.3rem; }
-.sig3 .pr small{ font-family:var(--sans); font-size:.78rem; color:var(--soft); }
-@media (hover:hover){ .sig3 article:hover img{ transform:scale(1.03); } }
-@media (min-width:900px){ .sig3{ grid-template-columns:repeat(3,1fr); gap:24px; } }
-
-/* Quick */
-.quick{ display:grid; gap:40px; }
-.quick figure{ margin:0; }
-.quick img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
-.checks{ margin:28px 0 0; padding:0; list-style:none; border-top:1px solid var(--ink); }
-.checks li{ display:grid; grid-template-columns:34px 1fr; gap:6px; padding:15px 0; border-bottom:1px solid var(--line); }
-.checks li::before{ content:""; width:16px; height:16px; margin-top:5px; border-radius:50%; background:var(--grad); border:1px solid var(--blush-2); }
-.checks b{ display:block; font-family:var(--disp); font-weight:400; font-size:1.15rem; line-height:1.3; }
-.checks span{ display:block; font-size:.86rem; color:var(--soft); }
 .fine{ margin:16px 0 0; font-size:.78rem; color:var(--soft); }
-@media (min-width:900px){ .quick{ grid-template-columns:.85fr 1.15fr; gap:80px; align-items:center; } }
+@media (min-width:900px){ .head.split .lead.r{ justify-self:end; text-align:right; } }
 
-/* 테크닉 4 */
-.tech{ display:grid; border-top:1px solid var(--ink); }
-.tech article{ padding:28px 0; border-bottom:1px solid var(--line); }
-.tech .no{ font-family:var(--disp); color:var(--soft); }
-.tech h3{ font-size:clamp(1.6rem,3vw,2.1rem); line-height:1.15; margin-top:10px; }
-.tech h3 small{ display:block; font-family:var(--sans); font-size:.88rem; color:var(--soft); margin-top:8px; }
-.tech p{ margin:14px 0 0; font-size:.9rem; color:var(--soft); }
-.tech .sig{ position:relative; }
-.tech .sig::after{ content:"Signature"; position:absolute; top:28px; right:0; padding:2px 10px; background:var(--grad); border:1px solid var(--blush-2); font-size:.64rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; }
-@media (min-width:900px){ .tech{ grid-template-columns:repeat(4,1fr); grid-template-rows:auto auto 1fr; } .tech article{ display:grid; grid-template-rows:subgrid; grid-row:span 3; align-content:start; } .head.split .lead.r{ justify-self:end; text-align:right; } .tech article{ padding:30px 26px 34px 0; border-bottom:0; } .tech article + article{ padding-left:26px; border-left:1px solid var(--line); } .tech .sig::after{ right:20px; } }
+.h2ko{ font-family:var(--sans); font-weight:500; font-size:clamp(1.5rem,3.4vw,2.3rem); line-height:1.35; letter-spacing:-.02em; margin-top:4px; }
 
-/* 서비스 사진 줄 */
-.photos{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:clamp(36px,5vw,60px); }
-.photos figure{ margin:0; background:var(--blush-soft); overflow:hidden; }
-.photos img{ width:100%; aspect-ratio:3/4; object-fit:cover; transition:transform 1.2s ease; }
-.photos figcaption{ padding:10px 0 0; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); background:var(--white); }
-@media (hover:hover){ .photos figure:hover img{ transform:scale(1.03); } }
-@media (min-width:900px){ .photos{ grid-template-columns:repeat(4,1fr); gap:18px; } .photos figure:nth-child(even){ margin-top:48px; } }
+/* 원장 이력 6칸 (v0.2 사장님 요청: 6가지 박스) */
+.creds{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2,1fr); background:var(--grad); border:1px solid var(--blush-2); border-radius:4px; overflow:hidden; }
+.creds li{ display:flex; flex-direction:column; gap:8px; padding:clamp(20px,3vw,32px) clamp(16px,2.6vw,30px); border-right:1px solid rgba(30,26,27,.1); border-bottom:1px solid rgba(30,26,27,.1); }
+.creds li:nth-child(2n){ border-right:0; }
+.creds li:nth-last-child(-n+2){ border-bottom:0; }
+.creds b{ font-family:var(--disp); font-weight:400; font-size:clamp(1.15rem,2.2vw,1.55rem); line-height:1.2; }
+.creds span{ font-size:.88rem; line-height:1.6; }
+@media (min-width:900px){
+  .creds{ grid-template-columns:repeat(3,1fr); }
+  .creds li:nth-child(2n){ border-right:1px solid rgba(30,26,27,.1); }
+  .creds li:nth-child(3n){ border-right:0; }
+  .creds li:nth-last-child(-n+3){ border-bottom:0; }
+}
+
+/* 시그니처 3 (v0.2 사진 삭제 · 글 카드) */
+.sig3{ display:grid; gap:18px; }
+.sig3 article{ background:var(--white); border:1px solid var(--line); border-radius:4px; display:flex; flex-direction:column; }
+.sig3 .body{ flex:1; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; gap:12px; }
+.sig3 .no{ font-family:var(--disp); color:var(--soft); }
+.sig3 h3{ font-family:var(--sans); font-weight:500; font-size:1.3rem; line-height:1.35; }
+.sig3 p{ margin:0; font-size:.9rem; color:var(--soft); }
+.sig3 p.em{ color:var(--ink); font-weight:500; padding-top:4px; }
+.sig3 .pr{ display:flex; justify-content:space-between; align-items:baseline; padding-top:14px; margin-top:auto; border-top:1px solid var(--line); font-family:var(--disp); font-size:1.3rem; }
+.sig3 .pr small{ font-family:var(--sans); font-size:.78rem; color:var(--soft); }
+@media (min-width:900px){ .sig3{ grid-template-columns:repeat(3,1fr); gap:24px; } }
 
 /* 메뉴 */
 .acc{ border-top:1px solid var(--ink); }
@@ -203,46 +188,58 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .price dd{ margin:0; font-family:var(--disp); font-size:1.25rem; white-space:nowrap; font-variant-numeric:tabular-nums; }
 .price dd small{ font-family:var(--sans); font-size:.78rem; margin-left:2px; }
 .tag{ display:inline-block; margin-left:8px; padding:1px 8px; background:var(--grad); border:1px solid var(--blush-2); font-size:.64rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; vertical-align:2px; }
-.event{ display:grid; gap:14px; margin-top:34px; padding:26px 26px 24px; background:var(--grad); border:1px solid var(--blush-2); }
-.event h3{ font-size:1.5rem; }
-.event ul{ margin:0; padding:0; list-style:none; display:grid; gap:4px; font-size:.92rem; }
-.event li::before{ content:"✓ "; color:var(--soft); }
-.event p{ margin:0; font-size:.8rem; color:var(--soft); }
-@media (min-width:900px){ .event{ grid-template-columns:.8fr 1.2fr; align-items:center; gap:40px; } }
-
-/* Wedding */
+/* Wedding (v0.2 사진 작게 · 구성 표기) */
 .wed{ display:grid; gap:40px; }
-.wed figure{ margin:0; }
+.wed figure{ margin:0; max-width:340px; }
 .wed img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
 .wed-list{ margin:28px 0 0; border-top:1px solid var(--ink); }
 .wed-list .row{ display:grid; grid-template-columns:1fr auto; gap:6px 18px; padding:18px 0; border-bottom:1px solid rgba(30,26,27,.12); }
 .wed-list dt{ font-family:var(--disp); font-size:1.3rem; }
-.wed-list dt small{ display:block; font-family:var(--sans); font-size:.86rem; color:var(--soft); }
+.wed-list dt small{ display:block; font-family:var(--sans); font-size:.86rem; color:var(--soft); margin-top:4px; line-height:1.6; }
 .wed-list dd{ margin:0; font-family:var(--disp); font-size:1.3rem; font-variant-numeric:tabular-nums; }
 .wed-list dd small{ font-family:var(--sans); font-size:.78rem; }
-@media (min-width:900px){ .wed{ grid-template-columns:1.1fr .9fr; gap:80px; align-items:center; } }
+@media (min-width:900px){ .wed{ grid-template-columns:1.3fr .7fr; gap:80px; align-items:center; } .wed figure{ justify-self:end; width:100%; } }
 
-/* Pro */
-.pro{ display:grid; border-top:1px solid var(--ink); counter-reset:p; margin:0; padding:0; }
-.pro li{ list-style:none; display:grid; grid-template-columns:52px 1fr; gap:8px; padding:18px 0; border-bottom:1px solid var(--line); counter-increment:p; }
-.pro li::before{ content:counter(p,decimal-leading-zero); font-family:var(--disp); color:var(--soft); }
-.pro b{ display:block; font-family:var(--disp); font-weight:400; font-size:1.2rem; line-height:1.3; }
-.pro span{ display:block; font-size:.86rem; color:var(--soft); margin-top:2px; }
-@media (min-width:900px){ .pro{ grid-template-columns:1fr 1fr; column-gap:60px; } }
+/* 수강 커리큘럼 (v0.2 · #pro 대체) */
+.cur-intro{ display:grid; gap:14px; }
+.cur-intro .big{ margin:0; font-size:clamp(1.15rem,2.2vw,1.45rem); font-weight:500; line-height:1.55; }
+.cur{ background:var(--white); border:1px solid var(--line); border-radius:6px; padding:0 clamp(18px,3vw,36px); }
+.cur details + details{ border-top:1px solid var(--line); }
+.cur summary{ list-style:none; display:grid; grid-template-columns:44px 1fr 22px; align-items:center; gap:8px; padding:24px 0; cursor:pointer; }
+.cur summary::-webkit-details-marker{ display:none; }
+.cur .n{ font-family:var(--disp); color:var(--soft); }
+.cur .t{ font-size:clamp(1.05rem,2vw,1.25rem); font-weight:500; line-height:1.4; }
+.cur .t small{ display:block; font-size:.72rem; font-weight:500; letter-spacing:.16em; color:var(--soft); margin-bottom:2px; }
+.cur .pm{ position:relative; width:16px; height:16px; justify-self:end; }
+.cur .pm::before, .cur .pm::after{ content:""; position:absolute; left:0; right:0; top:7px; height:1px; background:var(--ink); transition:transform .3s ease; }
+.cur .pm::after{ transform:rotate(90deg); }
+.cur details[open] .pm::after{ transform:rotate(0); }
+.cur .panel-in{ padding:0 0 26px 52px; }
+.cur .quote{ margin:0 0 12px; font-weight:500; }
+.cur ul{ margin:0; padding:0; list-style:none; display:grid; gap:6px; font-size:.92rem; color:var(--soft); }
+.cur li{ position:relative; padding-left:16px; }
+.cur li::before{ content:""; position:absolute; left:0; top:.85em; width:7px; height:1px; background:var(--soft); }
+@media (max-width:599px){ .cur .panel-in{ padding-left:0; } }
+.cur-close{ margin-top:clamp(36px,5vw,56px); padding:clamp(26px,4vw,44px); background:var(--grad); border:1px solid var(--blush-2); border-radius:4px; text-align:center; }
+.cur-close p{ margin:0 auto; max-width:40em; }
+.cur-close .why{ font-size:clamp(1.05rem,2vw,1.3rem); font-weight:500; line-height:1.7; }
+.cur-close .body{ margin-top:16px; font-size:.92rem; color:var(--soft); }
+.cur-close .sign{ margin-top:18px; font-size:.78rem; font-weight:500; letter-spacing:.12em; }
+@media (min-width:900px){ .cur-wrap{ display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; } }
 
 /* Academy */
 .aca-top{ display:grid; gap:36px; margin-bottom:clamp(40px,6vw,72px); }
 .aca-top figure{ margin:0; }
 .aca-top img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
 @media (min-width:900px){ .aca-top{ grid-template-columns:1.2fr .8fr; gap:80px; align-items:end; } }
+/* 수강 코스 3 (v0.2) */
+.aca-label{ margin-bottom:18px; }
 .aca{ display:grid; border-top:1px solid var(--ink); }
 .aca article{ padding:28px 0; border-bottom:1px solid var(--line); }
 .aca .no{ font-family:var(--disp); color:var(--soft); }
-.aca h3{ font-size:clamp(1.6rem,3vw,2.1rem); line-height:1.15; margin-top:10px; }
-.aca h3 small{ display:block; font-family:var(--sans); font-size:.88rem; color:var(--soft); margin-top:8px; }
-.aca ul{ margin:18px 0 0; padding:0; list-style:none; display:grid; gap:6px; font-size:.9rem; }
-.aca li{ padding-left:16px; position:relative; }
-.aca li::before{ content:""; position:absolute; left:0; top:.8em; width:6px; height:1px; background:var(--ink); }
+.aca h3{ font-family:var(--sans); font-weight:500; font-size:clamp(1.15rem,2vw,1.35rem); line-height:1.4; margin-top:10px; }
+.aca h3 small{ display:block; font-size:.9rem; font-weight:400; color:var(--soft); margin-top:6px; }
+.aca p{ margin:14px 0 0; font-size:.9rem; }
 @media (min-width:900px){ .aca{ grid-template-columns:repeat(3,1fr); } .aca article{ padding:32px 32px 36px 0; border-bottom:0; } .aca article + article{ padding-left:32px; border-left:1px solid var(--line); } }
 
 /* Visit */
@@ -256,16 +253,15 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .info dd p:last-child{ margin:0; }
 .info .en{ display:block; color:var(--soft); font-size:.84rem; }
 .hours{ display:grid; grid-template-columns:auto 1fr; gap:2px 18px; font-variant-numeric:tabular-nums; }
-.links{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:28px; }
+.links{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
 .links a{ display:flex; flex-direction:column; justify-content:space-between; min-height:92px; padding:14px 16px; border:1px solid var(--line); background:var(--white); transition:background .3s ease, border-color .3s ease; }
 .links a b{ font-weight:500; font-size:.88rem; }
 .links a span{ font-size:.78rem; color:var(--soft); }
 .links a.main{ background:var(--ink); color:var(--white); border-color:var(--ink); }
 .links a.main span{ color:#D3CDCF; }
 @media (hover:hover){ .links a:hover{ background:var(--grad); border-color:var(--blush-2); } .links a.main:hover{ color:var(--ink); } .links a.main:hover span{ color:var(--soft); } }
-@media (min-width:600px){ .links{ grid-template-columns:repeat(3,1fr); } }
-.mapframe{ width:100%; height:100%; min-height:380px; border:0; }
-@media (min-width:900px){ .visit{ grid-template-columns:1fr 1fr; gap:64px; align-items:stretch; } }
+.links a.main{ grid-column:1/-1; min-height:80px; }
+@media (min-width:900px){ .visit{ grid-template-columns:1fr 1fr; gap:64px; align-items:start; } .visit .links{ margin-top:0; } }
 
 /* 푸터 */
 .foot{ border-top:1px solid var(--line); padding:44px 0 56px; font-size:.82rem; color:var(--soft); background:linear-gradient(180deg,var(--white) 0%,var(--blush-soft) 100%); }
@@ -276,9 +272,10 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .foot nav a{ color:var(--ink); border-bottom:1px solid var(--blush-2); }
 @media (min-width:900px){ .foot .wrap{ grid-template-columns:auto 1fr auto; align-items:end; gap:50px; } }
 
-/* 리빌 */
-.js .reveal{ opacity:0; transform:translateY(18px); transition:opacity .9s ease, transform .9s ease; }
+/* 리빌 (v0.2 · 화면 아래 22% 선을 넘어야 나타남 → 섹션에 들어서기 전엔 아래 내용이 비어 있음) */
+.js .reveal{ opacity:0; transform:translateY(42px); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); transition-delay:var(--d,0s); }
 .js .reveal.in{ opacity:1; transform:none; }
+@media print{ .js .reveal{ opacity:1; transform:none; } }
 </style>
 <noscript><style>.reveal{ opacity:1 !important; transform:none !important; } .slides img:first-child{ opacity:1; transform:none; }</style></noscript>
 </head>
@@ -288,7 +285,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
   <div class="wrap">
     <a class="brand" href="#top" aria-label="WUHO BEAUTY 처음으로">WUHO BEAUTY</a>
     <nav class="nav" aria-label="주요 메뉴">
-      <a href="#quick">Quick</a><a href="#technique">Technique</a><a href="#menu">Menu</a><a href="#wedding">Wedding</a><a href="#academy">Academy</a><a href="#visit">Visit</a>
+      <a href="#signature">Signature</a><a href="#menu">Menu</a><a href="#wedding">Wedding</a><a href="#curriculum">Curriculum</a><a href="#academy">Academy</a><a href="#visit">Visit</a>
     </nav>
     <a class="btn dark" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">Book <small>예약</small></a>
   </div>
@@ -300,15 +297,27 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
     <div class="wrap">
       <div class="reveal">
         <p class="label kicker">Quick Waxing Studio · Baegot, Siheung</p>
-        <h1 id="hero-h">Quick waxing,<em>crafted by skill.</em></h1>
-        <p class="ko-t">단 15분, 그게 가능할까요?</p>
-        <p class="lead">빠르기만 한 왁싱이 아닌, 기술력으로 완성하는 QUICK WAXING. 피부 컨디션과 모질, 부위에 따라 하드 · 슈가링 · 소프트 왁싱 중 맞는 방법을 골라 원장이 1:1로 시술해요.</p>
-        <div class="cta">
-          <a class="btn dark" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">Book on Naver <small>네이버 예약</small></a>
-          <a class="btn blush" href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener">Kakao Chat <small>카카오 문의</small></a>
+        <div class="profile">
+          <div class="profile-top">
+            <img src="wh-owner.webp" alt="우호뷰티 백현민 대표원장 프로필 사진" width="480" height="640" fetchpriority="high" />
+            <div>
+              <p class="name">백현민<small>대표원장</small></p>
+              <p class="cred">[FLOHA 하드지부장 | 교육인증기관]</p>
+            </div>
+          </div>
+          <h1 id="hero-h">우호뷰티는 기술을 시술하고,<br />그 기술을 교육합니다</h1>
+          <ul class="points">
+            <li>퀵왁싱 • 맞춤 디자인 전문</li>
+            <li>FLOHA 하드왁싱 전문교육</li>
+            <li>시술 테크닉부터 샵 브랜딩까지</li>
+          </ul>
+          <div class="cta">
+            <a class="btn dark" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">네이버예약</a>
+            <a class="btn blush" href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener">카카오채널 문의</a>
+          </div>
         </div>
-        <p class="hero-meta"><span><b>Hard</b>하드</span><span><b>Sugaring</b>슈가링</span><span><b>Soft</b>소프트</span><span><b>Free parking 4h</b>주차 4시간 무료</span></p>
-        <p class="fine">※ 전후 사진의 결과는 피부 컨디션과 모질에 따라 개인차가 있을 수 있어요.</p>
+        <p class="hero-meta"><span><b>Hard</b>하드</span><span><b>Soft</b>소프트</span><span><b>Sugaring</b>슈가링</span><span><b>Sugar paste</b>슈가페이스트</span></p>
+        <p class="fine">*하드, 소프트, 슈가페이스트의 특성을 이해하고 피부 컨디션과 모질, 시술 부위에 따라 적합한 제품과 테크닉을 선택합니다.</p>
       </div>
       <figure class="slides reveal" id="slides" aria-label="우호뷰티 왁싱 사진">
         <img class="on" src="wh-hero.webp" alt="디자인 뒷목 왁싱 전후 비교, 내추럴 디자인" width="1100" height="1374" fetchpriority="high" />
@@ -320,98 +329,68 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
   </section>
 
 
-  <nav class="hl" aria-label="우호뷰티 핵심">
+  <section class="sec" id="pro" aria-labelledby="pro-h">
     <div class="wrap">
-      <ul>
-        <li><a href="#signature"><b>Signature 3</b><span>퀵 브라질리언 · 디자인 뒷목 · 헤이눈</span></a></li>
-        <li><a href="#pro"><b>FLOHA Hard Head</b><span>플로하 하드지부장 · 인증교육기관</span></a></li>
-        <li><a href="#prenatal"><b>Prenatal Certified</b><span>FLOHA 임산부 전문 인증기관</span></a></li>
-        <li><a href="#technique"><b>Hard · Sugaring · Soft</b><span>3가지 왁싱 중 선택 가능</span></a></li>
-        <li><a href="#academy"><b>Courses</b><span>정규 마스터 · 하드 속성 과정</span></a></li>
+      <div class="head reveal">
+        <p class="label">Waxing Professional<span class="ko">원장 소개</span></p>
+        <h2 id="pro-h" class="h2ko">시술을 넘어,<br />기술을 가르치는 사람</h2>
+      </div>
+      <ul class="creds reveal">
+        <li><b>FLOHA Hard Head</b><span>FLOHA 하드지부장</span></li>
+        <li><b>Certified Academy</b><span>FLOHA 인증교육기관</span></li>
+        <li><b>Prenatal Certified</b><span>FLOHA 임산부왁싱 전문 인증기관</span></li>
+        <li><b>Waxing Techniques</b><span>Hard•Soft•Sugaring•Sugar Paste 4가지 왁싱 마스터</span></li>
+        <li><b>Waxing Academy</b><span>정규반•속성반•원데이스킬업 과정</span></li>
+        <li><b>Awards &amp; License</b><span>국제미용대회 수상경력 및 피부미용 국가자격증</span></li>
       </ul>
     </div>
-  </nav>
+  </section>
 
-  <section class="sec" id="signature" aria-labelledby="sig-h">
+  <section class="sec blush" id="signature" aria-labelledby="sig-h">
     <div class="wrap">
       <div class="head split reveal">
         <div>
-          <p class="label">Signature<span class="ko">우호 시그니처 메뉴</span></p>
-          <h2 id="sig-h" style="margin-top:20px">Three things<br />we do best.<span class="ko-t">우호뷰티가 가장 자신 있는 세 가지</span></h2>
+          <p class="label">Signature<span class="ko">시그니처</span></p>
+          <h2 id="sig-h" class="h2ko">우호뷰티 시그니처 메뉴</h2>
         </div>
-        <p class="lead">헤이눈 · 디자인 뒷목 · 퀵 브라질리언. 우호뷰티를 대표하는 세 가지 시술이에요.</p>
+        <p class="lead r">헤이눈 · 디자인 뒷목 · 퀵 브라질리언. 우호뷰티를 대표하는 세 가지 시술이에요.</p>
       </div>
       <div class="sig3">
         <article class="reveal">
-          <figure><img loading="lazy" src="wh-legs.webp" alt="왁싱 후 매끈한 다리" width="900" height="856" /></figure>
-          <div class="body"><h3>Quick Brazilian<small>퀵 브라질리언 왁싱</small></h3><p>숙련된 하드왁싱 테크닉으로 평균 10~15분 내외. 반복 도포를 줄인 우호뷰티의 대표 시술.</p><div class="pr"><small>[하드] 여성</small><span>50,000<small>원</small></span></div></div>
+          <div class="body">
+            <span class="no">01</span>
+            <h3>퀵 브라질리언 왁싱</h3>
+            <p>숙련된 하드왁싱 테크닉으로 평균 10~15분 내외에 진행하는 우호뷰티의 대표 시술.</p>
+            <p>피부 컨디션과 모질, 모량을 고려하여 왁스의 온도와 도포 범위, 제거 타이밍을 조절하고 불필요한 반복 도포를 최소화합니다.</p>
+            <p class="em">단순히 빠른 시술이 아닌, 정확한 기술로 완성하는 퀵왁싱</p>
+            <div class="pr"><small>[하드] 여성</small><span>50,000<small>원</small></span></div>
+          </div>
         </article>
         <article class="reveal">
-          <figure><img loading="lazy" src="wh-design.webp" alt="장갑 낀 손으로 뒷목 라인을 디자인하는 모습" width="900" height="1600" /></figure>
-          <div class="body"><h3>Design Nape<small>칼각 디자인 뒷목왁싱</small></h3><p>목선과 헤어라인에 맞춰 라인을 디자인하는 뒷목 왁싱.</p><div class="pr"><small>뒷목</small><span>40,000<small>원</small></span></div></div>
+          <div class="body">
+            <span class="no">02</span>
+            <h3>디자인 뒷목왁싱</h3>
+            <p>단순히 잔머리를 제거하는 것이 아닌, 목선과 모발이 자라는 방향까지 고려한 맞춤형 디자인 왁싱</p>
+            <p>C커브•라운드•내추럴 3가지 디자인 중 고객님의 헤어라인과 원하는 스타일에 맞춰 자연스러운 라인을 완성합니다.</p>
+            <p class="em">웨딩•면접•촬영 등 중요한 일정을 앞둔 분들께 추천하는 디자인 시술</p>
+            <div class="pr"><small>뒷목</small><span>40,000<small>원</small></span></div>
+          </div>
         </article>
         <article class="reveal">
-          <figure><img loading="lazy" src="wh-hairline.webp" alt="헤어라인 왁싱 전후로 정리된 이마 라인" width="1000" height="415" /></figure>
-          <div class="body"><h3>Hey-Nun<small>헤이눈 왁싱 · 헤어라인 + 이마 + 눈썹</small></h3><p>헤어라인, 이마, 눈썹을 한 번에 정리하는 페이스 디자인 왁싱.</p><div class="pr"><small>3부위</small><span>60,000<small>원</small></span></div></div>
+          <div class="body">
+            <span class="no">03</span>
+            <h3>헤이눈 왁싱</h3>
+            <p>헤어라인+이마+눈썹 3가지 부위를 한 번에 관리하는 우호뷰티의 시그니처 페이스 디자인 왁싱</p>
+            <p>얼굴형과 모발의 방향, 기존 눈썹 라인을 고려해 전체적인 균형을 맞추고 불필요한 잔털을 정리합니다.</p>
+            <p class="em">단순한 제모를 넘어, 얼굴 전체의 인상을 고려한 디테일한 디자인 시술</p>
+            <div class="pr"><small>3부위</small><span>60,000<small>원</small></span></div>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="sec blush" id="quick" aria-labelledby="quick-h">
-    <div class="wrap quick">
-      <figure class="reveal"><img loading="lazy" src="wh-neck.webp" alt="왁싱으로 정리된 뒷목과 어깨 라인" width="900" height="1600" /></figure>
-      <div class="reveal">
-        <p class="label">Signature<span class="ko">퀵 브라질리언 왁싱</span></p>
-        <h2 id="quick-h" style="margin-top:20px">Fast, yet<br />more precise.<span class="ko-t">빠른데, 왜 더 섬세할까요?</span></h2>
-        <p class="lead" style="margin-top:24px">모질, 모량, 피부 컨디션, 털의 방향을 확인하고 왁스의 온도 · 점도 · 도포 범위 · 경화 타이밍을 조절해 불필요한 반복 작업을 줄여요. 손이 빠른 게 아니라, 동선을 미리 계산한 테크닉이에요.</p>
-        <ul class="checks">
-          <li><div><b>About 10–15 minutes</b><span>브라질리언 평균 10~15분 내외 퀵왁싱</span></div></li>
-          <li><div><b>Matched to your skin</b><span>피부 컨디션 · 모질에 따른 맞춤 테크닉</span></div></li>
-          <li><div><b>Less repeated waxing</b><span>불필요한 반복 도포를 줄인 섬세한 기술</span></div></li>
-          <li><div><b>Calming aftercare</b><span>비접촉식 진정관리 + 플로하 3STEP 진정케어</span></div></li>
-          <li><div><b>One-to-one with the director</b><span>1:1 원장 단독 시술</span></div></li>
-        </ul>
-        <p class="fine">※ 모량, 모질, 피부 컨디션 및 디자인에 따라 시술 시간에는 개인차가 있을 수 있어요.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="technique" aria-labelledby="tech-h">
-    <div class="wrap">
-      <div class="head split reveal">
-        <div>
-          <p class="label">Technique<span class="ko">테크닉</span></p>
-          <h2 id="tech-h" style="margin-top:20px">Not one way<br />for everyone.<span class="ko-t">한 가지 방식만 고집하지 않아요</span></h2>
-        </div>
-        <p class="lead r">사람마다 피부도, 털도 다르니까요. 시술자가 편한 방식보다 고객님의 피부 · 모질 · 부위에 맞는 방법을 선택해요.</p>
-      </div>
-      <div class="tech">
-        <article class="reveal"><span class="no">01</span><h3>Hard Wax<small>하드왁싱</small></h3><p>브라질리언, 겨드랑이, 페이스 등 부위와 피부 컨디션에 맞춰 섬세하게.</p></article>
-        <article class="reveal"><span class="no">02</span><h3>Sugaring<small>슈가링왁싱</small></h3><p>슈가 페이스트로 모질과 피부 상태에 맞춰 적용해요.</p></article>
-        <article class="reveal"><span class="no">03</span><h3>Soft Wax<small>소프트왁싱</small></h3><p>팔, 다리처럼 넓은 바디 부위를 빠르고 고르게.</p></article>
-        <article class="reveal sig"><span class="no">04</span><h3>Quick Technique<small>우호 시그니처</small></h3><p>하드왁싱 테크닉을 바탕으로 시간과 반복 작업을 줄인 퀵 브라질리언 시스템.</p></article>
-      </div>
-      <div class="event reveal" id="prenatal" style="margin-top:clamp(36px,5vw,60px)">
-        <div><p class="label">Prenatal Waxing</p><h3 style="margin-top:8px">Certified for moms-to-be.</h3></div>
-        <div>
-          <ul>
-            <li>FLOHA 임산부 전문 인증기관</li>
-            <li>임산부 저자극 브라질리언 (60,000원)</li>
-            <li>오래 누워 있기 힘든 임산부 고객님도 짧은 시간 안에</li>
-          </ul>
-        </div>
-      </div>
-      <div class="photos">
-        <figure class="reveal"><img loading="lazy" src="wh-body.webp" alt="몸에 붙인 연두색 소프트 왁스 스트립" width="900" height="1594" /><figcaption>Soft wax</figcaption></figure>
-        <figure class="reveal"><img loading="lazy" src="wh-leg-wax.webp" alt="다리에 바른 파란 하드 왁스" width="640" height="1136" /><figcaption>Hard wax</figcaption></figure>
-        <figure class="reveal"><img loading="lazy" src="wh-neck2.webp" alt="왁싱 후 정리된 뒷목 디자인을 휴대폰으로 확인하는 고객" width="900" height="1600" /><figcaption>Design nape</figcaption></figure>
-        <figure class="reveal"><img loading="lazy" src="wh-arm.webp" alt="팔 안쪽에 왁스를 정리하는 장갑 낀 손" width="900" height="1598" /><figcaption>Body</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec blush" id="menu" aria-labelledby="menu-h">
+  <section class="sec" id="menu" aria-labelledby="menu-h">
     <div class="wrap">
       <div class="head split reveal">
         <div>
@@ -428,7 +407,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
               <div class="row"><dt>Quick Brazilian, hard<span class="tag">Signature</span><small>[하드] 여성 퀵 브라질리언</small></dt><dd>50,000<small>원</small></dd></div>
               <div class="row"><dt>Low-irritation Brazilian, sugaring<small>[슈가링] 여성 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt>Half &amp; half, hard + sugaring<small>[하드 + 슈가링] 반반 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
-              <div class="row"><dt>Prenatal low-irritation Brazilian<small>임산부 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
+              <div class="row"><dt>Prenatal low-irritation Brazilian<span class="tag">Signature</span><small>임산부 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt>Friends, Quick Brazilian<small>우정 퀵 브라질리언</small></dt><dd>100,000<small>원</small></dd></div>
               <div class="row"><dt>Couple, Quick Brazilian<small>커플 퀵 브라질리언</small></dt><dd>120,000<small>원</small></dd></div>
             </dl>
@@ -446,17 +425,6 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           </div></div>
         </details>
       </div>
-      <div class="event reveal">
-        <div><p class="label">Wuho 365 Event</p><h3 style="margin-top:8px">Every day, a little more.</h3></div>
-        <div>
-          <ul>
-            <li>첫 방문 10,000원 할인</li>
-            <li>4만 원 이상 결제 시 스탬프 1개 적립</li>
-            <li>스탬프 10개 적립 시 퀵 브라질리언 1회 무료</li>
-          </ul>
-          <p style="margin-top:10px">※ 이벤트 및 할인 적용 조건은 예약 메뉴를 확인해 주세요.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -464,11 +432,11 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
     <div class="wrap wed">
       <div class="reveal">
         <p class="label">Wedding<span class="ko">예비신부를 위한 웨딩 패키지</span></p>
-        <h2 id="wed-h" style="margin-top:20px">For the day<br />you say yes.<span class="ko-t">드레스 라인부터 얼굴 라인까지</span></h2>
+        <h2 id="wed-h" style="margin-top:20px">Wuho Signature<br />Wedding Package<span class="ko-t">드레스 라인부터 얼굴 라인까지</span></h2>
         <dl class="wed-list">
-          <div class="row"><dt>Basic<small>드레스 노출 라인 중심</small></dt><dd>80,000<small>원</small></dd></div>
-          <div class="row"><dt>Face<small>얼굴 라인 집중</small></dt><dd>100,000<small>원</small></dd></div>
-          <div class="row"><dt>Signature<small>토탈 웨딩왁싱</small></dt><dd>180,000<small>원</small></dd></div>
+          <div class="row"><dt>Basic<small>드레스 노출 라인 중심<br />(디자인 뒷목 + 팔 하프 + 등 전체)</small></dt><dd>80,000<small>원</small></dd></div>
+          <div class="row"><dt>Face<small>얼굴 라인 집중<br />(디자인 뒷목 + 헤이눈 + 구레나룻)</small></dt><dd>100,000<small>원</small></dd></div>
+          <div class="row"><dt>Signature<small>토탈 웨딩왁싱<br />(헤이눈 + 디자인 뒷목 + 등 전체 + 팔 전체 + 손/손등 Sv.)</small></dt><dd>180,000<small>원</small></dd></div>
         </dl>
         <div class="cta" style="margin-top:28px"><a class="btn dark" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">Book wedding <small>웨딩 예약</small></a></div>
       </div>
@@ -476,23 +444,59 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
     </div>
   </section>
 
-  <section class="sec" id="pro" aria-labelledby="pro-h">
+  <section class="sec" id="curriculum" aria-labelledby="cur-h">
     <div class="wrap">
-      <div class="head split reveal">
-        <div>
-          <p class="label">Waxing Professional<span class="ko">원장 소개</span></p>
-          <h2 id="pro-h" style="margin-top:20px">One director,<br />one client.<span class="ko-t">1:1 원장 개인 상담 및 단독 시술</span></h2>
+      <div class="cur-wrap">
+        <div class="cur-intro reveal">
+          <p class="label">Curriculum<span class="ko">수강 커리큘럼 소개</span></p>
+          <h2 id="cur-h" style="margin-top:6px">WUHO BEAUTY<br />ACADEMY</h2>
+          <p class="big" style="margin-top:12px">기술을 배우는 것에서<br />현장에 적용하는 것까지</p>
+          <p class="lead" style="color:var(--ink)">FLOHA 하드지부장이 직접 전하는 실무 중심 왁싱 교육</p>
+          <p class="lead">왁스의 이해부터 부위별 테크닉, 디자인, 도구 세팅과 샵 운영까지. 실제 시술 현장에서 필요한 기술과 노하우를 단계별로 교육합니다.</p>
         </div>
-        <p class="lead r">브라질리언이 처음이라 긴장되셨던 분도, 오랜 시술 시간이 부담스러웠던 분도 편안하게 관리받으실 수 있도록 진행해요.</p>
+        <div class="cur reveal">
+          <details open>
+            <summary><span class="n">01</span><span class="t"><small>STEP 01 | FOUNDATION</small>왁싱의 기본과 이해</span><span class="pm" aria-hidden="true"></span></summary>
+            <div class="panel"><div class="panel-in">
+              <p class="quote">기술의 완성도는 정확한 기초에서 시작됩니다.</p>
+              <ul><li>피부 구조와 모발 성장 주기 이해</li><li>하드왁스의 특성과 제품별 제형·활용법</li><li>시술 전 피부·모질 컨디션 파악 및 상담</li><li>위생 관리와 안전한 시술 환경 구축</li></ul>
+            </div></div>
+          </details>
+          <details>
+            <summary><span class="n">02</span><span class="t"><small>STEP 02 | PRACTICAL TECHNIQUE</small>부위별 실무 테크닉</span><span class="pm" aria-hidden="true"></span></summary>
+            <div class="panel"><div class="panel-in">
+              <p class="quote">단순한 동작보다 정확한 기술에 집중합니다.</p>
+              <ul><li>브라질리언·바디·페이스 부위별 실습</li><li>왁스 온도·도포 방향·텐션·제거 테크닉</li><li>모질과 부위에 따른 작업 범위 및 경화 타이밍 조절</li><li>불필요한 반복 작업을 줄이는 퀵왁싱 노하우</li><li>시술 중 발생하는 변수와 상황별 대응법</li></ul>
+            </div></div>
+          </details>
+          <details>
+            <summary><span class="n">03</span><span class="t"><small>STEP 03 | DESIGN &amp; AFTERCARE</small>디자인 왁싱과 진정 관리</span><span class="pm" aria-hidden="true"></span></summary>
+            <div class="panel"><div class="panel-in">
+              <p class="quote">제모를 넘어 디자인과 마무리까지.</p>
+              <ul><li>헤어라인·눈썹·뒷목 디자인의 기본 원리</li><li>얼굴형과 모발 방향을 고려한 라인 설계법</li><li>시술 부위별 피부 반응 확인 및 사후 관리</li><li>피부 컨디션에 따른 진정·보습 케어</li><li>고객에게 전달하는 홈케어 안내 방법</li><li>부위별 디자인 도구 셋팅법까지</li></ul>
+            </div></div>
+          </details>
+          <details>
+            <summary><span class="n">04</span><span class="t"><small>STEP 04 | SALON MANAGEMENT</small>현장에서 필요한 샵 운영 실무</span><span class="pm" aria-hidden="true"></span></summary>
+            <div class="panel"><div class="panel-in">
+              <p class="quote">기술만큼 중요한 건 운영의 디테일입니다.</p>
+              <ul><li>1인 왁싱샵 창업 준비 및 실무 운영 노하우</li><li>시술 도구·필수 비품 세팅 및 거래처 정보 공유</li><li>인스타그램 콘텐츠 기획 및 셀프마케팅 실무</li><li>시술 사진·비포애프터를 활용한 홍보 방법</li><li>고객 상담부터 예약·재방문으로 이어지는 운영 관리</li><li>네이버 플레이스 메뉴 구성 및 홍보 콘텐츠 운영 노하우</li></ul>
+            </div></div>
+          </details>
+          <details>
+            <summary><span class="n">05</span><span class="t"><small>STEP 05 | GROWTH &amp; FEEDBACK</small>실무 피드백과 성장 방향</span><span class="pm" aria-hidden="true"></span></summary>
+            <div class="panel"><div class="panel-in">
+              <p class="quote">배운 기술을 내 기술로 완성하는 과정.</p>
+              <ul><li>개인별 테크닉 점검 및 1:1 맞춤 피드백</li><li>실무에 적용할 수 있는 기술 보완 및 성장 방향 제안</li><li>FLOHA 교육인증기관 수료증 발급</li><li>FLOHA 정기 세미나 무료 참석 혜택</li><li>정기 세미나를 통한 최신 테크닉 및 전문 지식 습득</li><li>지속적인 기술 역량 강화와 전문성 향상</li></ul>
+            </div></div>
+          </details>
+        </div>
       </div>
-      <ul class="pro reveal">
-        <li><div><b>FLOHA hard branch head</b><span>FLOHA 하드지부장 · 인증교육기관 · 임산부 전문 인증기관</span></div></li>
-        <li><div><b>National esthetician license</b><span>피부미용 국가자격 보유</span></div></li>
-        <li><div><b>Competition judge</b><span>미용 국제대회 왁싱 베이직 심사위원 경력</span></div></li>
-        <li><div><b>Grand Prix winner</b><span>미용 국제대회 그랜드그랑프리 · 그랑프리 수상</span></div></li>
-        <li><div><b>Hard, sugaring &amp; soft</b><span>하드 / 슈가링 / 소프트 테크닉 적용</span></div></li>
-        <li><div><b>4 hours free parking</b><span>베니스스퀘어 주차 4시간 무료</span></div></li>
-      </ul>
+      <div class="cur-close reveal">
+        <p class="why">기술에는 이유가 있어야 합니다.<br />왜 이 방향으로 도포하는지,<br />왜 이 타이밍에 제거하는지,<br />왜 고객마다 다른 방법을 선택해야 하는지</p>
+        <p class="body">단순히 동작을 따라 하는 교육이 아닌, 기술의 원리를 이해하고 현장에 적용할 수 있도록 우호뷰티가 실제 시술 현장에서 쌓아온 경험과 노하우를 전달합니다.</p>
+        <p class="sign">FLOHA 하드지부장 직강 · 실무 중심 전문교육</p>
+      </div>
     </div>
   </section>
 
@@ -510,21 +514,22 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
         </div>
         <figure class="reveal"><img loading="lazy" src="wh-cooling.webp" alt="플로하 아이스 쿨링 왁싱 제품을 올린 스테인리스 트레이" width="900" height="945" /></figure>
       </div>
+      <p class="label aca-label reveal">Courses<span class="ko">수강 코스</span></p>
       <div class="aca">
         <article class="reveal">
           <span class="no">01</span>
-          <h3>Courses<small>정규 마스터 · 하드 속성 과정</small></h3>
-          <ul><li>정규 마스터 과정 모집</li><li>하드 속성 과정 모집</li><li>일정 · 비용은 카카오 채널로 문의</li></ul>
+          <h3>하드 &amp; 소프트 정규 마스터 과정<small>왁싱 입문부터 샵 운영까지</small></h3>
+          <p>부위별 시술 테크닉과 디자인, 도구 세팅부터 고객 관리•셀프마케팅까지, 기술과 운영 역량을 함께 배우는 실무 중심 마스터 과정</p>
         </article>
         <article class="reveal">
           <span class="no">02</span>
-          <h3>What you learn<small>하드왁싱 전문 교육 · 실무 테크닉</small></h3>
-          <ul><li>기술</li><li>디자인</li><li>도구 세팅</li><li>샵 운영 노하우</li></ul>
+          <h3>하드 테크닉 속성 과정<small>기본기를 넘어 실전 테크닉 강화</small></h3>
+          <p>하드왁싱 도포•텐션•제거 기술과 시술 동선을 집중적으로 점검하고, 개인별 피드백을 통해 실무 완성도를 높이는 단기 집중 과정</p>
         </article>
         <article class="reveal">
           <span class="no">03</span>
-          <h3>FLOHA Products<small>플로하 제품 · 웰컴키트</small></h3>
-          <ul><li>플로하 전 제품 관련 문의</li><li>웰컴키트 할인 중 · 택배 가능</li></ul>
+          <h3>원데이 시그니처 스킬업<small>퀵브라질리언&amp;디자인 뒷목왁싱</small></h3>
+          <p>우호뷰티의 시그니처 테크닉을 집중적으로 배우는 실전 스킬업, 퀵왁싱 노하우와 디자인 기술을 기존 시술에 접목하는 과정</p>
         </article>
       </div>
     </div>
@@ -540,22 +545,19 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
         <div class="reveal">
           <dl class="info">
             <div class="row"><dt>Address<small>주소</small></dt><dd><p>경기 시흥시 서울대학로278번길 61 S동 4층 404호<span class="en">S-404, 61 Seouldaehak-ro 278beon-gil, Siheung</span></p></dd></div>
-            <div class="row"><dt>Walk<small>도보</small></dt><dd><p>배곧 롯데마트 옆 CGV 배곧 베니스스퀘어 S동 4층에 있어요.</p></dd></div>
-            <div class="row"><dt>Bus<small>버스</small></dt><dd><p>배곧 중심상가에서 내려 스타벅스 배곧신도시점 앞 횡단보도를 건넌 뒤, 탑텐 옆 엘리베이터를 타고 4층으로 오세요.</p></dd></div>
-            <div class="row"><dt>Car<small>자동차</small></dt><dd><p>배곧 CGV를 찾아오시면 편해요(CGV는 C동, 우호뷰티는 S동이고 건물끼리 이어져 있어요). 지하주차장 2층까지 있고, 최대 4시간 무료 주차예요.</p></dd></div>
             <div class="row"><dt>Hours<small>영업시간</small></dt><dd><div class="hours"><span>Mon – Fri 월–금</span><span>10:00 – 21:00</span><span>Sat – Sun 토–일</span><span>10:00 – 19:00</span></div></dd></div>
-            <div class="row"><dt>Call<small>전화</small></dt><dd><p><a href="tel:050713698370">0507-1369-8370</a></p></dd></div>
+            <div class="row"><dt>Private Entry<small>출입 안내</small></dt><dd><p>1:1 프라이빗 공간으로 출입문은 상시 잠금 상태이며, 방문 시 벨을 눌러주시면 안내해드려요.</p></dd></div>
           </dl>
+        </div>
+        <div class="reveal">
           <nav class="links" aria-label="예약 · 문의 링크">
             <a class="main" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener"><b>Naver Booking</b><span>네이버 예약하기</span></a>
             <a href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener"><b>Kakao Channel</b><span>시술 &amp; 수강 문의</span></a>
             <a href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener"><b>FLOHA Products</b><span>플로하 제품 · 정규과정 · 웰컴키트</span></a>
             <a href="https://www.instagram.com/wuhobeauty_official/" target="_blank" rel="noopener"><b>Instagram</b><span>@wuhobeauty_official</span></a>
             <a href="https://blog.naver.com/wuhobeauty_official" target="_blank" rel="noopener"><b>Blog</b><span>네이버 블로그</span></a>
-            <a href="tel:050713698370"><b>Call</b><span>전화 걸기</span></a>
           </nav>
         </div>
-        <iframe class="mapframe reveal" src="https://www.google.com/maps?q=%EA%B2%BD%EA%B8%B0%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EB%A1%9C278%EB%B2%88%EA%B8%B8%2061&amp;output=embed" title="우호뷰티 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -567,7 +569,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
     <span class="brand">WUHO BEAUTY</span>
     <div>
       <p>우호뷰티 배곧본점 · FLOHA 하드 인증교육센터</p>
-      <p>경기 시흥시 서울대학로278번길 61 S동 4층 404호 · 0507-1369-8370</p>
+      <p>경기 시흥시 서울대학로278번길 61 S동 4층 404호</p>
       <p>© WUHO BEAUTY</p>
     </div>
     <nav aria-label="푸터 링크"><a href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">Naver</a><a href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener">Kakao</a><a href="https://www.instagram.com/wuhobeauty_official/" target="_blank" rel="noopener">Instagram</a><a href="#top">Top</a></nav>
@@ -576,14 +578,25 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 
 <script>
 (function(){
-  /* 리빌 (IntersectionObserver + 2.4초 안전망) */
+  /* 리빌 v0.2: 요소 윗변이 화면 아래 22% 선을 넘어야 나타남 (섹션에 들어서기 전엔 아래 내용이 안 보임)
+     IntersectionObserver 없이 setInterval 위치 검사로 구동 → 브라우저·확장 프로그램 차이 없이 동작.
+     같은 묶음 안의 형제 요소는 0.12초씩 차례로. 이미 지나간(화면 위) 요소는 즉시 표시(앵커 이동 · 새로고침 대비). */
   var items=[].slice.call(document.querySelectorAll('.reveal'));
-  var show=function(el){ el.classList.add('in'); };
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } }); }, {threshold:.06});
-    items.forEach(function(el){ io.observe(el); });
-    setTimeout(function(){ items.forEach(show); }, 2400);
-  } else { items.forEach(show); }
+  items.forEach(function(el){
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){ return c.classList.contains('reveal'); });
+    var k=sib.indexOf(el); if(k>0) el.style.setProperty('--d', Math.min(k,4)*0.12+'s');
+  });
+  var pending=items.slice();
+  var check=function(){
+    if(!pending.length){ clearInterval(rv); return; }
+    var line=window.innerHeight*0.78;
+    pending=pending.filter(function(el){
+      var top=el.getBoundingClientRect().top;
+      if(top<line){ el.classList.add('in'); return false; }
+      return true;
+    });
+  };
+  var rv=setInterval(check, 120); check();
 
   /* 히어로 크로스페이드 (setInterval 강제) */
   var slides=[].slice.call(document.querySelectorAll('#slides img'));
@@ -595,7 +608,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
   }, 4200);
 
   /* 토글 부드럽게 */
-  [].slice.call(document.querySelectorAll('.acc details')).forEach(function(d){
+  [].slice.call(document.querySelectorAll('.acc details, .cur details')).forEach(function(d){
     var sum=d.querySelector('summary'), panel=d.querySelector('.panel'), busy=false;
     sum.addEventListener('click', function(e){
       e.preventDefault(); if(busy) return; busy=true;
