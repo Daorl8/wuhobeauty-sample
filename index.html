@@ -46,13 +46,13 @@
 
 :root{
   --white:#FFFFFF;
-  --blush-soft:#FAF4F4;   /* 아주 옅은 분홍 면 (v0.1.1 톤다운) */
-  --blush:#F1E2E4;        /* 연분홍 (포인트 · v0.1.1 톤다운) */
-  --blush-2:#E2CACF;      /* 조금 진한 연분홍 (선·점 · v0.1.1 톤다운) */
+  --blush-soft:rgba(253,242,244,.6);   /* 아주 옅은 분홍 면 (v0.1.2 원래 색조 + 투명도) */
+  --blush:rgba(247,220,227,.55);        /* 연분홍 #F7DCE3 · 투명도 55% */
+  --blush-2:rgba(237,191,203,.6);      /* 진한 연분홍 #EDBFCB · 투명도 60% */
   --line:#EFE6E8;
   --ink:#1E1A1B;
   --soft:#625A5C;         /* 흰 바탕 6.7:1 */
-  --grad:linear-gradient(120deg,#F7ECED 0%,#EEDDE0 48%,#FAF4F4 100%);
+  --grad:linear-gradient(120deg,rgba(251,230,235,.55) 0%,rgba(244,211,220,.55) 48%,rgba(253,242,244,.55) 100%);
   --disp:"WH Display","WH Sans",sans-serif;
   --sans:"WH Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --wrap:1180px;
@@ -98,8 +98,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 
 /* 히어로 (연분홍 그라데이션 빛) */
 .hero{ position:relative; padding:clamp(36px,6vw,80px) 0 clamp(56px,8vw,110px); background:
-  radial-gradient(60% 55% at 88% 18%, rgba(236,216,220,.7) 0%, rgba(236,216,220,0) 70%),
-  radial-gradient(45% 50% at 8% 92%, rgba(245,234,236,.9) 0%, rgba(245,234,236,0) 70%),
+  radial-gradient(60% 55% at 88% 18%, rgba(244,207,217,.45) 0%, rgba(244,207,217,0) 70%),
+  radial-gradient(45% 50% at 8% 92%, rgba(250,228,234,.55) 0%, rgba(250,228,234,0) 70%),
   var(--white); overflow:hidden; }
 .hero .wrap{ display:grid; gap:40px; position:relative; }
 .kicker{ display:flex; align-items:center; gap:10px; }
