@@ -9,3 +9,14 @@ img
 img/**
 index_*.html
 wh-mist.webp
+feedback_1
+feedback_1/**
+# v0.2 미사용 사진 (사장님 피드백으로 섹션 삭제)
+wh-arm.webp
+wh-body.webp
+wh-design.webp
+wh-hairline.webp
+wh-leg-wax.webp
+wh-legs.webp
+wh-neck.webp
+wh-neck2.webp
