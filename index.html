@@ -135,8 +135,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 /* v0.2.1 모바일 전용: 아래에 붙어 따라오는 예약 · 문의 버튼 */
 .float-cta{ display:none; }
 @media (max-width:899px){
-  .float-cta{ display:flex; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:60; padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px)); background:rgba(255,255,255,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line); transform:translateY(110%); transition:transform .45s cubic-bezier(.2,.7,.2,1); }
-  .float-cta.on{ transform:none; }
+  .float-cta{ display:flex; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:60; padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px)); background:rgba(255,255,255,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line); transform:translateY(110%); visibility:hidden; transition:transform .45s cubic-bezier(.2,.7,.2,1), visibility .45s; }
+  .float-cta.on{ transform:none; visibility:visible; }
   .float-cta .btn{ flex:1; justify-content:center; height:48px; padding:0 12px; }
   .float-cta .btn.dark{ flex:1.4; }
   .foot{ padding-bottom:calc(56px + 72px + env(safe-area-inset-bottom,0px)); }
@@ -619,6 +619,10 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
   var pending=items.slice();
   var check=function(){
     if(!pending.length){ clearInterval(rv); return; }
+    /* 안전망: 페이지 끝까지 내리면 남은 요소 전부 표시 (아주 긴 화면에서 마지막 요소가 78% 선을 못 넘는 경우 대비) */
+    if(window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4){
+      pending.forEach(function(el){ el.classList.add('in'); }); pending=[]; return;
+    }
     var line=window.innerHeight*0.78;
     pending=pending.filter(function(el){
       var top=el.getBoundingClientRect().top;
