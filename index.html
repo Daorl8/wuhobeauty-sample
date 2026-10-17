@@ -111,25 +111,27 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .profile .name{ margin:0; font-size:1.35rem; font-weight:500; line-height:1.3; }
 .profile .name small{ font-size:.92rem; font-weight:400; color:var(--soft); margin-left:6px; }
 .profile .cred{ margin:6px 0 0; font-size:.86rem; color:var(--soft); }
-.hero h1{ font-family:var(--sans); font-weight:500; font-size:clamp(1.6rem,3.4vw,2.35rem); line-height:1.4; letter-spacing:-.02em; margin:28px 0 0; }
+.hero h1{ font-family:var(--sans); font-weight:500; font-size:clamp(1.3rem,2.8vw,1.95rem); line-height:1.4; letter-spacing:-.02em; margin:28px 0 0; }
 .points{ margin:18px 0 26px; padding:0; list-style:none; display:grid; gap:6px; font-size:.95rem; }
 .points li{ position:relative; padding-left:16px; }
 .points li::before{ content:""; position:absolute; left:0; top:.85em; width:7px; height:1px; background:var(--ink); }
 .cta{ display:flex; flex-wrap:wrap; gap:10px; }
 @media (min-width:600px){ .profile-top img{ width:120px; } }
 
-/* v0.2.1 모바일 전용: 원장 사진 크게(REVE 예시처럼 화면 꽉 차게 + 아래로 흰색에 스며듦). PC는 작은 증명사진 그대로 */
+/* 모바일 전용 원장 사진 (v0.2.3 사장님 2차: 화면 꽉 차게 → 가운데 작게). PC는 작은 증명사진 그대로 */
 .m-portrait{ display:none; }
 @media (max-width:899px){
-  .hero{ padding-top:0; }
-  .m-portrait{ display:block; position:relative; margin:0; aspect-ratio:4/5; max-height:82vh; overflow:hidden; background:#BDC2C5; }
+  .hero{ padding-top:28px; }
+  .m-portrait{ display:block; position:relative; margin:0 auto 4px; width:min(58vw,240px); aspect-ratio:4/5; overflow:hidden; background:#BDC2C5; border-radius:4px; border:1px solid var(--line); }
   .m-portrait img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
-  .m-portrait::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,0) 52%,rgba(255,255,255,.55) 78%,#FFFFFF 100%); }
-  .hero .wrap{ margin-top:-64px; z-index:1; }
-  .profile{ margin-top:16px; padding:0; background:transparent; border:0; border-radius:0; }
+  .hero .wrap{ margin-top:0; }
+  .profile{ margin-top:16px; padding:0; background:transparent; border:0; border-radius:0; text-align:center; }
+  .points{ display:inline-grid; text-align:left; }
+  .profile .cta{ justify-content:center; }
+  .hero .kicker{ justify-content:center; font-size:.64rem; letter-spacing:.12em; white-space:nowrap; }
   .profile-top{ display:block; }
   .profile-top img{ display:none; }
-  .profile .name{ font-size:1.7rem; }
+  .profile .name{ font-size:1.5rem; }
 }
 
 /* v0.2.1 모바일 전용: 아래에 붙어 따라오는 예약 · 문의 버튼 */
@@ -141,8 +143,13 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
   .float-cta .btn.dark{ flex:1.4; }
   .foot{ padding-bottom:calc(56px + 72px + env(safe-area-inset-bottom,0px)); }
 }
-.hero-meta{ display:flex; flex-wrap:wrap; gap:8px 26px; margin:30px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:.8rem; color:var(--soft); }
+.hero-meta{ display:flex; flex-wrap:nowrap; gap:8px 26px; margin:30px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:.8rem; color:var(--soft); white-space:nowrap; }
 .hero-meta b{ font-weight:500; color:var(--ink); margin-right:6px; }
+/* v0.2.3 모바일: 4가지가 한 줄에 들어가도록 영문 위 · 한글 아래 2단 칸으로 */
+@media (max-width:599px){
+  .hero-meta{ display:grid; grid-template-columns:repeat(4,auto); justify-content:space-between; gap:0 6px; font-size:min(.72rem,3vw); text-align:center; line-height:1.45; }
+  .hero-meta b{ display:block; margin:0; font-size:min(.78rem,3.2vw); }
+}
 .slides{ position:relative; margin:0; aspect-ratio:4/5; overflow:hidden; background:var(--blush-soft); }
 .slides img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.04); transition:opacity 1.4s ease, transform 6s ease; }
 .slides img.on{ opacity:1; transform:scale(1); }
@@ -164,14 +171,15 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .h2ko{ font-family:var(--sans); font-weight:500; font-size:clamp(1.5rem,3.4vw,2.3rem); line-height:1.35; letter-spacing:-.02em; margin-top:4px; }
 
 /* 원장 이력 6칸 (v0.2 사장님 요청: 6가지 박스) */
-.creds{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2,1fr); background:var(--grad); border:1px solid var(--blush-2); border-radius:4px; overflow:hidden; }
-.creds li{ display:flex; flex-direction:column; gap:8px; padding:clamp(20px,3vw,32px) clamp(16px,2.6vw,30px); border-right:1px solid rgba(30,26,27,.1); border-bottom:1px solid rgba(30,26,27,.1); }
+/* v0.2.3 사장님 2차: 칸 크기 전부 동일 (minmax(0,1fr) = 긴 단어가 칸을 밀어내지 못함 · grid-auto-rows:1fr = 높이 동일) + 글자 축소 */
+.creds{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:1fr; background:var(--grad); border:1px solid var(--blush-2); border-radius:4px; overflow:hidden; }
+.creds li{ min-width:0; display:flex; flex-direction:column; gap:6px; padding:clamp(16px,2.6vw,28px) clamp(12px,2.2vw,26px); border-right:1px solid rgba(30,26,27,.1); border-bottom:1px solid rgba(30,26,27,.1); overflow-wrap:break-word; }
 .creds li:nth-child(2n){ border-right:0; }
 .creds li:nth-last-child(-n+2){ border-bottom:0; }
-.creds b{ font-family:var(--disp); font-weight:400; font-size:clamp(1.15rem,2.2vw,1.55rem); line-height:1.2; }
-.creds span{ font-size:.88rem; line-height:1.6; }
+.creds b{ font-family:var(--disp); font-weight:400; font-size:clamp(1rem,1.9vw,1.3rem); line-height:1.2; }
+.creds span{ font-size:clamp(.76rem,1.4vw,.84rem); line-height:1.55; }
 @media (min-width:900px){
-  .creds{ grid-template-columns:repeat(3,1fr); }
+  .creds{ grid-template-columns:repeat(3,minmax(0,1fr)); }
   .creds li:nth-child(2n){ border-right:1px solid rgba(30,26,27,.1); }
   .creds li:nth-child(3n){ border-right:0; }
   .creds li:nth-last-child(-n+3){ border-bottom:0; }
@@ -222,7 +230,31 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .wed-list dt small{ display:block; font-family:var(--sans); font-size:.86rem; color:var(--soft); margin-top:4px; line-height:1.6; }
 .wed-list dd{ margin:0; font-family:var(--disp); font-size:1.3rem; font-variant-numeric:tabular-nums; }
 .wed-list dd small{ font-family:var(--sans); font-size:.78rem; }
-@media (min-width:900px){ .wed{ grid-template-columns:1.3fr .7fr; gap:80px; align-items:center; } .wed figure{ justify-self:end; width:100%; } }
+@media (min-width:900px){ .wed{ grid-template-columns:1.3fr .7fr; gap:80px; align-items:center; } .wed figure{ justify-self:end; width:100%; } .wed-slider{ justify-self:end; } }
+
+/* v0.2.3 웨딩 사진 슬라이더 (손가락으로 넘기기 + 화살표 + 4.5초 자동, setInterval) */
+.wed-slider{ width:100%; max-width:360px; }
+.ws-track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; overscroll-behavior-x:contain; border-radius:4px; background:var(--blush-soft); }
+.ws-track::-webkit-scrollbar{ display:none; }
+.ws-track img{ flex:0 0 100%; width:100%; aspect-ratio:4/5; object-fit:cover; scroll-snap-align:center; }
+.ws-nav{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:12px; }
+.ws-btn{ width:40px; height:40px; display:grid; place-items:center; padding:0; border:1px solid var(--ink); border-radius:2px; background:transparent; color:var(--ink); cursor:pointer; transition:background .3s ease, color .3s ease; }
+.ws-btn svg{ width:16px; height:16px; }
+@media (hover:hover){ .ws-btn:hover{ background:var(--ink); color:var(--white); } }
+.ws-dots{ display:flex; gap:6px; }
+.ws-dots span{ width:6px; height:6px; border-radius:3px; background:rgba(30,26,27,.25); transition:width .3s ease, background .3s ease; }
+.ws-dots span.on{ width:18px; background:var(--ink); }
+
+/* v0.2.3 네이버 방문자 리뷰 (천천히 흐르는 띠, setInterval · 손 대면 멈춤) */
+.rv-wrap{ overflow:hidden; padding:6px 0 10px; }
+.rv-track{ display:flex; gap:16px; padding-right:16px; width:max-content; align-items:flex-start; will-change:transform; }
+.rv-card{ width:min(78vw,310px); flex:none; padding:20px 20px 18px; background:var(--white); border:1px solid var(--line); border-radius:4px; }
+.rv-top{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px; font-size:.8rem; }
+.rv-top b{ font-weight:500; }
+.rv-top .star{ color:#B5536C; letter-spacing:2px; font-size:.78rem; }
+.rv-card p{ margin:0; font-size:.88rem; line-height:1.7; color:var(--ink); display:-webkit-box; -webkit-line-clamp:8; -webkit-box-orient:vertical; overflow:hidden; }
+.rv-src{ display:inline-block; margin-top:12px; font-size:.72rem; letter-spacing:.06em; color:var(--soft); }
+.rv-more{ margin-top:22px; }
 
 /* 수강 커리큘럼 (v0.2 · #pro 대체) */
 .cur-intro{ display:grid; gap:14px; }
@@ -285,7 +317,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .links a.main span{ color:#D3CDCF; }
 @media (hover:hover){ .links a:hover{ background:var(--grad); border-color:var(--blush-2); } .links a.main:hover{ color:var(--ink); } .links a.main:hover span{ color:var(--soft); } }
 .links a.main{ grid-column:1/-1; min-height:80px; }
-@media (min-width:900px){ .visit{ grid-template-columns:1fr 1fr; gap:64px; align-items:start; } .visit .links{ margin-top:0; } }
+.mapframe{ width:100%; height:340px; border:0; border-radius:4px; }
+@media (min-width:900px){ .visit{ grid-template-columns:1fr 1fr; gap:64px; align-items:start; } .visit .links{ margin-top:0; } .mapframe{ grid-column:1/-1; height:400px; } }
 
 /* 푸터 */
 .foot{ border-top:1px solid var(--line); padding:44px 0 56px; font-size:.82rem; color:var(--soft); background:linear-gradient(180deg,var(--white) 0%,var(--blush-soft) 100%); }
@@ -364,8 +397,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
         <li><b>FLOHA Hard Head</b><span>FLOHA 하드지부장</span></li>
         <li><b>Certified Academy</b><span>FLOHA 인증교육기관</span></li>
         <li><b>Prenatal Certified</b><span>FLOHA 임산부왁싱 전문 인증기관</span></li>
-        <li><b>Waxing Techniques</b><span>Hard•Soft•Sugaring•Sugar Paste 4가지 왁싱 마스터</span></li>
-        <li><b>Waxing Academy</b><span>정규반•속성반•원데이스킬업 과정</span></li>
+        <li><b>Waxing Techniques</b><span>Hard•<wbr />Soft•<wbr />Sugaring•<wbr />Sugar Paste 4가지 왁싱 마스터</span></li>
+        <li><b>Waxing Academy</b><span>정규반•<wbr />속성반•<wbr />원데이스킬업 과정</span></li>
         <li><b>Awards &amp; License</b><span>국제미용대회 수상경력 및 피부미용 국가자격증</span></li>
       </ul>
     </div>
@@ -415,7 +448,32 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
     </div>
   </section>
 
-  <section class="sec" id="menu" aria-labelledby="menu-h">
+  <section class="sec" id="reviews" aria-labelledby="rv-h">
+    <div class="wrap">
+      <div class="head split reveal">
+        <div>
+          <p class="label">Reviews<span class="ko">네이버 방문자 리뷰</span></p>
+          <h2 id="rv-h" class="h2ko">다녀가신 분들의 이야기</h2>
+        </div>
+        <p class="lead r">네이버 플레이스에 남겨주신 실제 방문자 리뷰예요. 닉네임은 일부만 표시했어요.</p>
+      </div>
+    </div>
+    <div class="rv-wrap reveal" id="rv-wrap" aria-label="네이버 방문자 리뷰, 자동으로 흐름 · 누르고 있으면 멈춤">
+      <div class="rv-track" id="rv-track">
+        <article class="rv-card"><div class="rv-top"><b>lm*****</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>원장님의 빠르지만 상냥한 손길!❤️ 수다쟁이인 저랑 조잘조잘 떠들어주시다 보면 어느새 끝나있어요.. 우호 방문 이후로 그 어떤샵도 쳐다보지 않습니다 전. 평생 우호 할거에요ㅠㅠ 100번째 방문하는 그날까지 포에버❤️‍🔥🙏🏻</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>ad*****</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>산전 왁싱으로 처음 경험해봤는데 너무 만족스러워요! 임신중일땐 작은 자극도 더 크게 느껴져서 걱정이었는데 원장님 손이 너무 빠르시고 친절하셔서 충분히 할 만 하다고 느낍니다 :-) 출산후에도 이어서 관리 받을 수 있을거같아요! 첫 왁싱이신분들도 걱정없이 방문하셔도 될것같아요 너무너무 추천합니다ㅎㅎ!!</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>비따***</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>💙배곧 퀵왁싱 임산부 브라질리언 왁싱 추천합니다! 1. 손이 정말 빠르세요! 브라질리언 왁싱.. 정말 아프잖아요🥹 원장님 손이 정말 빠르셔서 통증도 느낄 새 없이 정말 빠르게 끝났어요! 그동안 받은 브라질리언 왁싱 중 가장 빠르게 끝난 것 같습니당! 2. 엄청 친절하세용! 시술 전, 슈가링 왁싱과 하드 왁싱에 대해서, 그리고 제가 받는 왁싱에 대해서 어떻게 진행이 될건지 그리고 후관리까지 친절하고 꼼꼼하게 설명해주셨어요! 만약 처음 왁싱받는 분들이라면 더더욱 방문하시기 좋을 것 같아요! 3. 청결합니다 일단 샵 자체도 깔끔하지만 쓰시는 도구들도 다 일회용으로 한번 사용 후 바로 버리시더라고요! 청결해서 더더욱 재방문하고 싶었던 곳입니다! 원장님도 너무 친절하시고 꼼꼼히 시술해주셔서 정말 좋아요 추천합니다!</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>be****</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>왁싱 유목민에서 우효뷰티로 정착하고 쭉 왁싱은 우효뷰티에서 받고있어요. 원장님께서 손도 빠르신데 꼼꼼하시고 다른곳은 브라질리언 받으면 아픈게 오래 남아서 불편했었는데 우호뷰티는 그런게 없어요👍👍 배곧 왁싱 고민이시분들 꼭 받아보세요!!</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>뮤게****</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>웨딩촬영 3일 전에 방문했는데 너무 만족해요!! 원장님 손도 빠르시구 무엇보다 꼼꼼하셔서 좋았어요 ㅎ 손품팔아서 리뷰다 찾아보고 방문했는데 여기로 선택 잘한것 같아요 ~~!! 부자연스럽지않게 뒷목 디자인 해주신것도 맘에 듭니다💓💓 본식에도 또 방문할께요👰🏻‍♀️🫶</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>다이****</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>주차하기도 편리하고 속눈썹펌도 같이 할 수 있는 공간이 있어서 다음번에 같이 하고 가볼게요😆😆 주기적으로 오고 있어서 관리시간도 짧아지는거같아서 좋습니다👍🏻👍🏻 손 빠른 원장님 체고!</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>해밍**</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>배곧에서 이만큼 빠른 브라질리언 왁싱 없어요ㅠㅠ 원장님 너무 친절하시고 꼼꼼하신데 엄청 빠르게 끝내주십니다!! 빨리 끝나서 훨신 덜아프게 느껴지고, 매장도 편안하고 청결해서 좋은 기억만 가지고 온 왁싱샵 입니다💕 배곧에서 왁싱샵은 여기로 정착!!!!🥺</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+        <article class="rv-card"><div class="rv-top"><b>mo*****</b><span class="star" aria-label="별점 5점">★★★★★</span></div><p>위생적이게 일회용 제품도 잘 구비되어있고 출산전에 왁싱 받으러 처음으로 왔는데, 뗄때만 잠깐 아프고 왁스도 따듯하고 오히려 마사지 받는 느낌이 나서 노곤노곤 편안하게 시술 받았습니다!! 배뭉침 이슈도 있어서 뭉치진 않을까 했는데 오히려 태동이 활발해졌다는.. ☺️ 아기도 편안하게 느껴졌나봅니다! 💗</p><span class="rv-src">네이버 방문자 리뷰</span></article>
+      </div>
+    </div>
+    <div class="wrap rv-more reveal"><a class="btn line" href="https://m.place.naver.com/place/1556944024/review/visitor" target="_blank" rel="noopener">리뷰 더 보기 <small>네이버 플레이스</small></a></div>
+  </section>
+
+  <section class="sec blush" id="menu" aria-labelledby="menu-h">
     <div class="wrap">
       <div class="head split reveal">
         <div>
@@ -465,7 +523,20 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
         </dl>
         <div class="cta" style="margin-top:28px"><a class="btn dark" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">Book wedding <small>웨딩 예약</small></a></div>
       </div>
-      <figure class="reveal"><img loading="lazy" src="wh-wedding.webp" alt="숲길에서 뒷모습으로 걷는 웨딩드레스 차림의 신부" width="1000" height="1249" /></figure>
+      <div class="wed-slider reveal" role="region" aria-roledescription="carousel" aria-label="웨딩 사진 슬라이드">
+        <div class="ws-track" id="ws-track" tabindex="0">
+          <img loading="lazy" src="wh-wedding.webp" alt="숲길에서 뒷모습으로 걷는 웨딩드레스 차림의 신부" width="1000" height="1249" />
+          <img loading="lazy" src="wh-wed1.webp" alt="숲속에서 부케를 든 신부와 신랑" width="800" height="1000" />
+          <img loading="lazy" src="wh-wed2.webp" alt="흰 소파에 기대 앉은 웨딩드레스 차림의 신부" width="800" height="1000" />
+          <img loading="lazy" src="wh-wed3.webp" alt="야외에서 레이스 웨딩드레스를 입고 앉은 신부" width="800" height="1000" />
+          <img loading="lazy" src="wh-wed4.webp" alt="바닷가에서 부케를 든 검은 드레스의 여성과 반지 케이스를 든 사람" width="800" height="1000" />
+        </div>
+        <div class="ws-nav">
+          <button class="ws-btn" type="button" data-dir="-1" aria-label="이전 사진"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          <div class="ws-dots" id="ws-dots" aria-hidden="true"></div>
+          <button class="ws-btn" type="button" data-dir="1" aria-label="다음 사진"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -583,6 +654,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
             <a href="https://blog.naver.com/wuhobeauty_official" target="_blank" rel="noopener"><b>Blog</b><span>네이버 블로그</span></a>
           </nav>
         </div>
+        <iframe class="mapframe reveal" src="https://www.google.com/maps?q=%EA%B2%BD%EA%B8%B0%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EB%A1%9C278%EB%B2%88%EA%B8%B8%2061&amp;output=embed" title="우호뷰티 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -639,6 +711,53 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
       var past=heroCta.getBoundingClientRect().bottom<0;
       if(past!==fc.classList.contains('on')) fc.classList.toggle('on', past);
     }, 150);
+  }
+
+  /* 웨딩 사진 슬라이더: 손가락 스와이프(scroll-snap) + 화살표 + 4.5초 자동 넘김 (setInterval)
+     손으로 넘기거나 버튼을 누르면 7초 동안 자동 넘김 쉼 */
+  var wt=document.getElementById('ws-track'), wd=document.getElementById('ws-dots');
+  if(wt && wd){
+    var wImgs=[].slice.call(wt.querySelectorAll('img')), wN=wImgs.length, wHold=0, wBusy=false;
+    wImgs.forEach(function(){ wd.appendChild(document.createElement('span')); });
+    var wDots=[].slice.call(wd.children);
+    var wIdx=function(){ return wt.clientWidth ? Math.round(wt.scrollLeft/wt.clientWidth) : 0; };
+    var wGo=function(i){
+      i=(i+wN)%wN; var from=wt.scrollLeft, to=i*wt.clientWidth, t0=Date.now(), dur=520;
+      wBusy=true; wt.style.scrollSnapType='none';
+      var tm=setInterval(function(){
+        var p=Math.min(1,(Date.now()-t0)/dur), e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+        wt.scrollLeft=from+(to-from)*e;
+        if(p>=1){ clearInterval(tm); wt.style.scrollSnapType=''; wBusy=false; }
+      },16);
+    };
+    [].slice.call(document.querySelectorAll('.ws-btn')).forEach(function(b){
+      b.addEventListener('click', function(){ wHold=Date.now()+7000; wGo(wIdx()+(+b.getAttribute('data-dir'))); });
+    });
+    ['touchstart','pointerdown','wheel'].forEach(function(ev){ wt.addEventListener(ev, function(){ wHold=Date.now()+7000; }, {passive:true}); });
+    setInterval(function(){ var k=wIdx(); wDots.forEach(function(d,j){ d.classList.toggle('on', j===k); }); }, 150);
+    setInterval(function(){
+      if(wBusy || Date.now()<wHold) return;
+      var r=wt.getBoundingClientRect(); if(r.bottom<0 || r.top>window.innerHeight) return;
+      wGo(wIdx()+1);
+    }, 4500);
+  }
+
+  /* 네이버 리뷰 띠: 천천히 왼쪽으로 흐름 (setInterval · 초당 약 24px)
+     카드 묶음을 한 번 복제해 끊김 없이 반복 · 마우스를 올리거나 손가락으로 누르고 있으면 멈춤 */
+  var rt=document.getElementById('rv-track'), rw=document.getElementById('rv-wrap');
+  if(rt && rw){
+    [].slice.call(rt.children).forEach(function(c){ var d=c.cloneNode(true); d.setAttribute('aria-hidden','true'); rt.appendChild(d); });
+    var rx=0, rStop=false;
+    rw.addEventListener('mouseenter', function(){ rStop=true; });
+    rw.addEventListener('mouseleave', function(){ rStop=false; });
+    rw.addEventListener('touchstart', function(){ rStop=true; }, {passive:true});
+    rw.addEventListener('touchend', function(){ rStop=false; });
+    setInterval(function(){
+      if(rStop) return;
+      var r=rw.getBoundingClientRect(); if(r.bottom<0 || r.top>window.innerHeight) return;
+      var half=rt.scrollWidth/2; rx-=0.8; if(-rx>=half) rx+=half;
+      rt.style.transform='translateX('+rx+'px)';
+    }, 33);
   }
 
   /* 히어로 크로스페이드 (setInterval 강제) */
