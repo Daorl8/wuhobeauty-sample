@@ -117,6 +117,30 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .points li::before{ content:""; position:absolute; left:0; top:.85em; width:7px; height:1px; background:var(--ink); }
 .cta{ display:flex; flex-wrap:wrap; gap:10px; }
 @media (min-width:600px){ .profile-top img{ width:120px; } }
+
+/* v0.2.1 모바일 전용: 원장 사진 크게(REVE 예시처럼 화면 꽉 차게 + 아래로 흰색에 스며듦). PC는 작은 증명사진 그대로 */
+.m-portrait{ display:none; }
+@media (max-width:899px){
+  .hero{ padding-top:0; }
+  .m-portrait{ display:block; position:relative; margin:0; aspect-ratio:4/5; max-height:82vh; overflow:hidden; background:#BDC2C5; }
+  .m-portrait img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
+  .m-portrait::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,0) 52%,rgba(255,255,255,.55) 78%,#FFFFFF 100%); }
+  .hero .wrap{ margin-top:-64px; z-index:1; }
+  .profile{ margin-top:16px; padding:0; background:transparent; border:0; border-radius:0; }
+  .profile-top{ display:block; }
+  .profile-top img{ display:none; }
+  .profile .name{ font-size:1.7rem; }
+}
+
+/* v0.2.1 모바일 전용: 아래에 붙어 따라오는 예약 · 문의 버튼 */
+.float-cta{ display:none; }
+@media (max-width:899px){
+  .float-cta{ display:flex; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:60; padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px)); background:rgba(255,255,255,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line); transform:translateY(110%); transition:transform .45s cubic-bezier(.2,.7,.2,1); }
+  .float-cta.on{ transform:none; }
+  .float-cta .btn{ flex:1; justify-content:center; height:48px; padding:0 12px; }
+  .float-cta .btn.dark{ flex:1.4; }
+  .foot{ padding-bottom:calc(56px + 72px + env(safe-area-inset-bottom,0px)); }
+}
 .hero-meta{ display:flex; flex-wrap:wrap; gap:8px 26px; margin:30px 0 0; padding:18px 0 0; border-top:1px solid var(--line); font-size:.8rem; color:var(--soft); }
 .hero-meta b{ font-weight:500; color:var(--ink); margin-right:6px; }
 .slides{ position:relative; margin:0; aspect-ratio:4/5; overflow:hidden; background:var(--blush-soft); }
@@ -294,6 +318,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 <main id="top">
 
   <section class="hero" aria-labelledby="hero-h">
+    <figure class="m-portrait"><img src="wh-owner-lg.webp" alt="우호뷰티 백현민 대표원장" width="900" height="1125" fetchpriority="high" /></figure>
     <div class="wrap">
       <div class="reveal">
         <p class="label kicker">Quick Waxing Studio · Baegot, Siheung</p>
@@ -564,6 +589,11 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 
 </main>
 
+<nav class="float-cta" id="float-cta" aria-label="빠른 예약 · 문의">
+  <a class="btn dark" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener">네이버예약</a>
+  <a class="btn blush" href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener">카카오채널 문의</a>
+</nav>
+
 <footer class="foot">
   <div class="wrap">
     <span class="brand">WUHO BEAUTY</span>
@@ -597,6 +627,15 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
     });
   };
   var rv=setInterval(check, 120); check();
+
+  /* 모바일 하단 예약 버튼: 히어로 버튼이 화면 위로 지나가면 올라옴 (setInterval 검사) */
+  var fc=document.getElementById('float-cta'), heroCta=document.querySelector('.hero .cta');
+  if(fc && heroCta){
+    setInterval(function(){
+      var past=heroCta.getBoundingClientRect().bottom<0;
+      if(past!==fc.classList.contains('on')) fc.classList.toggle('on', past);
+    }, 150);
+  }
 
   /* 히어로 크로스페이드 (setInterval 강제) */
   var slides=[].slice.call(document.querySelectorAll('#slides img'));
