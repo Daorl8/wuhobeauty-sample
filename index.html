@@ -120,6 +120,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 
 /* 모바일 전용 원장 사진 (v0.2.3 사장님 2차: 화면 꽉 차게 → 가운데 작게). PC는 작은 증명사진 그대로 */
 .m-portrait, .m-kicker{ display:none; }
+.m-br{ display:none; }
+@media (max-width:899px){ .m-br{ display:inline; } }
 @media (max-width:899px){
   .hero{ padding-top:22px; padding-bottom:28px; }
   .hero .wrap{ gap:28px; }
@@ -306,6 +308,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .cur-close .why{ font-size:clamp(1.05rem,2vw,1.3rem); font-weight:500; line-height:1.7; }
 .cur-close .body{ margin-top:16px; font-size:.92rem; color:var(--soft); }
 .cur-close .sign{ margin-top:18px; font-size:.78rem; font-weight:500; letter-spacing:.12em; }
+@media (max-width:899px){ .cur-wrap .cur{ margin-top:36px; } }
 @media (min-width:900px){ .cur-wrap{ display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; } }
 
 /* Academy */
@@ -315,6 +318,9 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 @media (min-width:900px){ .aca-top{ grid-template-columns:1.2fr .8fr; gap:80px; align-items:end; } }
 .aca-top.pn{ margin-bottom:0; }
 .aca-top.pn img{ aspect-ratio:auto; }
+.aca-top.pn figure{ width:min(72%,320px); }
+@media (max-width:899px){ .aca-top.pn figure{ margin:0 auto; } }
+@media (min-width:900px){ .aca-top.pn figure{ justify-self:end; } }
 .pn-sub{ margin:24px 0 0; font-size:1.08rem; font-weight:500; color:var(--ink); }
 #maternity .work-wrap{ margin-top:clamp(32px,5vw,56px); }
 /* 수강 코스 3 (v0.2) */
@@ -413,7 +419,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           </div>
         </div>
         <p class="hero-meta"><span><b>Hard</b>하드</span><span><b>Soft</b>소프트</span><span><b>Sugaring</b>슈가링</span><span><b>Sugar paste</b>슈가페이스트</span></p>
-        <p class="fine">*하드, 소프트, 슈가페이스트의 특성을 이해하고 피부 컨디션과 모질, 시술 부위에 따라 적합한 제품과 테크닉을 선택합니다.</p>
+        <p class="fine">*하드, 소프트, 슈가페이스트의 특성을 이해하고 피부 컨디션과 모질,<br class="m-br" /> 시술 부위에 따라 적합한 제품과 테크닉을 선택합니다.</p>
       </div>
     </div>
   </section>
@@ -443,7 +449,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           <p class="label">Signature<span class="ko">시그니처</span></p>
           <h2 id="sig-h" class="h2ko">우호뷰티 시그니처 메뉴</h2>
         </div>
-        <p class="lead r">헤이눈 · 디자인 뒷목 · 퀵 브라질리언. 우호뷰티를 대표하는 세 가지 시술이에요.</p>
+        <p class="lead r">헤이눈 · 디자인 뒷목 · 퀵 브라질리언.<br class="m-br" /> 우호뷰티를 대표하는 세 가지 시술이에요.</p>
       </div>
       <div class="sig3">
         <article class="reveal">
@@ -457,7 +463,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
         </article>
         <article class="reveal">
           <div class="body">
-            <div class="ttl"><span class="no">02</span><h3>디자인 뒷목왁싱</h3></div>
+            <div class="ttl"><span class="no">02</span><h3>디자인 뒷목왁싱</h3><span class="tag">Signature</span></div>
             <p>단순히 잔머리를 제거하는 것이 아닌, 목선과 모발이 자라는 방향까지 고려한 맞춤형 디자인 왁싱</p>
             <p>C커브•라운드•내추럴 3가지 디자인 중 고객님의 헤어라인과 원하는 스타일에 맞춰 자연스러운 라인을 완성합니다.</p>
             <p class="em">웨딩•면접•촬영 등 중요한 일정을 앞둔 분들께 추천하는 디자인 시술</p>
@@ -466,7 +472,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
         </article>
         <article class="reveal">
           <div class="body">
-            <div class="ttl"><span class="no">03</span><h3>헤이눈 왁싱</h3></div>
+            <div class="ttl"><span class="no">03</span><h3>헤이눈 왁싱</h3><span class="tag">Signature</span></div>
             <p>헤어라인+이마+눈썹 3가지 부위를 한 번에 관리하는 우호뷰티의 시그니처 페이스 디자인 왁싱</p>
             <p>얼굴형과 모발의 방향, 기존 눈썹 라인을 고려해 전체적인 균형을 맞추고 불필요한 잔털을 정리합니다.</p>
             <p class="em">단순한 제모를 넘어, 얼굴 전체의 인상을 고려한 디테일한 디자인 시술</p>
@@ -525,7 +531,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           <summary><span class="n">i.</span><span class="t">Brazilian<small>브라질리언</small></span><span class="pm" aria-hidden="true"></span></summary>
           <div class="panel"><div class="panel-in">
             <dl class="price">
-              <div class="row"><dt><span class="en">Quick Brazilian<span class="tag">Signature</span></span><small>[하드] 여성 퀵 브라질리언</small></dt><dd class="sale"><span class="was">정가 <s>60,000</s></span><span class="now"><em>첫 방문 시</em>50,000<small>원</small></span></dd></div>
+              <div class="row"><dt><span class="en">Quick Brazilian<span class="tag">Signature</span></span><small>[하드] 여성 퀵 브라질리언</small></dt><dd>50,000<small>원</small></dd></div>
               <div class="row"><dt>Low-irritation Brazilian, sugaring<small>[슈가링] 여성 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt>Half &amp; half, hard + sugaring<small>[하드 + 슈가링] 반반 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt><span class="en">Prenatal Brazilian<span class="tag">Signature</span></span><small>임산부 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
@@ -539,8 +545,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           <div class="panel"><div class="panel-in">
             <dl class="price">
               <div class="row"><dt>Thread-line brow design<small>실 디자인 눈썹왁싱</small></dt><dd>30,000<small>원</small></dd></div>
-              <div class="row"><dt><span class="en">Design nape<span class="tag">Signature</span></span><small>디자인 뒷목왁싱</small></dt><dd class="sale"><span class="was">정가 <s>40,000</s></span><span class="now"><em>첫 방문 시</em>30,000<small>원</small></span></dd></div>
-              <div class="row"><dt>Hairline, forehead &amp; brows<span class="tag">Signature</span><small>헤이눈 왁싱 (헤어라인 + 이마 + 눈썹)</small></dt><dd class="sale"><span class="was">정가 <s>90,000</s></span><span class="now"><em>세트 할인가</em>60,000<small>원</small></span></dd></div>
+              <div class="row"><dt><span class="en">Design nape<span class="tag">Signature</span></span><small>디자인 뒷목왁싱</small></dt><dd>40,000<small>원</small></dd></div>
+              <div class="row"><dt>Hairline, forehead &amp; brows<span class="tag">Signature</span><small>헤이눈 왁싱 (헤어라인 + 이마 + 눈썹)</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt>Full face + FLOHA 3-step care<small>풀페이스 + 플로하 3STEP 케어</small></dt><dd>100,000<small>원</small></dd></div>
             </dl>
           </div></div>
@@ -714,7 +720,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           <nav class="links" aria-label="예약 · 문의 링크">
             <a class="main" href="https://naver.me/F9zNDIBN" target="_blank" rel="noopener"><b>Naver Booking</b><span>네이버 예약하기</span></a>
             <a href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener"><b>Kakao Channel</b><span>시술 &amp; 수강 문의</span></a>
-            <a href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener"><b>FLOHA Products</b><span>플로하 제품 · 정규과정 · 웰컴키트</span></a>
+            <a href="https://pf.kakao.com/_DqBKG" target="_blank" rel="noopener"><b>FLOHA Products</b><span>플로하 제품 · 교육 문의</span></a>
             <a href="https://www.instagram.com/wuhobeauty_official/" target="_blank" rel="noopener"><b>Instagram</b><span>@wuhobeauty_official</span></a>
             <a href="https://blog.naver.com/wuhobeauty_official" target="_blank" rel="noopener"><b>Blog</b><span>네이버 블로그</span></a>
           </nav>
