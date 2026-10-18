@@ -9,9 +9,11 @@ wuhobeauty-sample/
 ├─ wh-interop-400/500.woff2   한글·본문 (Interop · 사용 글자만 → 글자 추가 시 재생성)
 ├─ wh-owner.webp              원장 증명사진 480×640 (PC 히어로 프로필 카드)
 ├─ wh-owner-lg.webp           원장 사진 900×1125 (모바일 히어로 `.m-portrait`, 화면엔 최대 240px)
+├─ wh-floha.webp · wh-pn-cert.webp · wh-pn1~10.webp  아카데미 · 임산부 섹션 사진
+├─ wh-work1~5.webp           시그니처 아래 시술 사진 띠
 ├─ wh-wed1~4.webp             웨딩 슬라이더 사진 800×1000 (feedback_2 원본)
 ├─ wh-*.webp                  사용 중: hero·ba·strip(히어로 크로스페이드) · wedding · cooling · owner
-├─ feedback_1/ · feedback_2/  사장님 피드백 자료 (배포 · 깃허브 업로드 제외)
+├─ feedback_1~3/ · prenatal section/  사장님 자료 (배포 · 깃허브 업로드 제외)
 ├─ favicon.png                연분홍 그라데이션 + W
 ├─ og-wuho.jpg                공유 썸네일 1200×630
 ├─ img/                       다올 제공 원본 131장 (배포 제외)
@@ -19,7 +21,7 @@ wuhobeauty-sample/
 ```
 
 ## 섹션 순서
-(v0.2) 헤더 → 히어로(원장 프로필 카드 `.profile` + `#slides`) → `#pro`(이력 6칸 `.creds`) → `#signature`(글 카드 3, 분홍 면) → `#reviews`(네이버 리뷰 흐르는 띠 `#rv-track`) → `#menu`(토글 2, 분홍 면) → `#wedding`(그라데이션 면, 구성 표기 + 사진 슬라이더 `#ws-track`) → `#curriculum`(STEP 01~05 토글 `.cur` + 마무리 `.cur-close`) → `#academy`(소개 + 사진 + 수강 코스 3) → `#visit`(주소 · 영업시간 · 출입 안내 + 버튼 5 + 구글 지도) → 푸터.
+(v0.2) 헤더 → 히어로(원장 프로필 카드 `.profile` + `#slides`) → `#pro`(이력 6칸 `.creds`) → `#signature`(글 카드 3, 분홍 면) → `#reviews`(네이버 리뷰 흐르는 띠 `#rv-track`) → `#menu`(토글 2, 분홍 면) → `#wedding`(그라데이션 면, 구성 표기 + 사진 슬라이더 `#ws-track`) → `#curriculum`(STEP 01~05 토글 `.cur` + 마무리 `.cur-close`) → `#academy`(소개 + FLOHA 사진 + 수강 코스 3) → `#maternity`(임산부 인증점 소개 + 인증패 + 사진 띠 `#pn-track`) → `#visit`(주소 · 영업시간 · 출입 안내 + 버튼 5 + 구글 지도) → 푸터.
 
 ## 모바일 전용 (899px 이하)
 - `.m-portrait`: 히어로 맨 위 원장 사진(가운데 작게). PC에선 display:none.

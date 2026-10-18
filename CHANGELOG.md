@@ -1,5 +1,13 @@
 # CHANGELOG · 우호뷰티 WUHO BEAUTY (@wuhobeauty_official)
 
+## v0.2.6 · 2026-10-18 (다올 수정)
+- FLOHA Hard Certified Center 사진 교체: wh-cooling → img/floha.jpg(wh-floha.webp 1000px, "FLOHA ACADEMY" 문구 가운데라 4:3 잘림에도 유지). wh-cooling 미사용 → .assetsignore.
+- **새 섹션 `#maternity`** (아카데미 바로 아래, 같은 틀 · 분홍 면 · 버튼 없음): "FLOHA Maternity / Certified Center." · 플로하 임산부 왁싱 전문 인증점 · "임산부를 위한 전문 교육, 차별화된 왁싱 케어" + 사장님 소개 문단 원문.
+  - 메인 사진: 인증패(wh-pn-cert.webp, 원본 비율 그대로 · 잘림 없음).
+  - 나머지 10장(wh-pn1~10.webp, 높이 900px · 얼굴 미노출 원본)은 섹션 아래 사진 띠로 천천히 흐름(시그니처 아래 띠와 같은 방식).
+- 사진 띠 JS를 함수 하나로 묶어 두 띠(`#work-track` · `#pn-track`)에 함께 적용.
+- Interop 서브셋 재생성(새 글자, 누락 0). prenatal section/ 폴더 .assetsignore 추가.
+
 ## v0.2.5 · 2026-10-18 (다올 수정)
 - 모바일 섹션 간 여백 축소: 섹션 위아래 72px → 52px, 섹션 제목 아래 36px → 28px, 히어로 아래 20px · 원장 소개 위 36px.
 - 히어로 사진 묶음(크로스페이드 3장 · 01/03 캡션) 삭제 → 시그니처 메뉴 아래에 시술 사진 띠로 이동(천천히 왼쪽으로 흐름, setInterval · 마우스 올리거나 손가락으로 누르면 멈춤 · 화면 밖이면 쉼).
