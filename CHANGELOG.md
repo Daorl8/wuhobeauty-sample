@@ -1,5 +1,17 @@
 # CHANGELOG · 우호뷰티 WUHO BEAUTY (@wuhobeauty_official)
 
+## v0.2.5 · 2026-10-18 (다올 수정)
+- 모바일 섹션 간 여백 축소: 섹션 위아래 72px → 52px, 섹션 제목 아래 36px → 28px, 히어로 아래 20px · 원장 소개 위 36px.
+- 히어로 사진 묶음(크로스페이드 3장 · 01/03 캡션) 삭제 → 시그니처 메뉴 아래에 시술 사진 띠로 이동(천천히 왼쪽으로 흐름, setInterval · 마우스 올리거나 손가락으로 누르면 멈춤 · 화면 밖이면 쉼).
+- 띠 사진은 feedback_3 5장으로 교체(wh-work1~5.webp, 높이 900px, 얼굴은 사장님이 이미 흐림 처리한 원본 그대로). 기존 wh-hero · wh-ba · wh-strip 미사용 → .assetsignore.
+- PC 히어로: 오른쪽 사진 칸이 빠져 한 칸(최대 760px) 가운데 정렬.
+- 가격표: "Prenatal low-irritation Brazilian" → "Prenatal Brazilian", "Sharp-line nape design / 칼각 디자인 뒷목왁싱" → "Design nape / 디자인 뒷목왁싱". 두 줄 모두 Signature 라벨이 이름과 한 줄(`.en` 줄바꿈 금지).
+- 커리큘럼 소개 문장 "왁스의 이해부터 … 단계별로 교육합니다." 삭제.
+- feedback_3/ .assetsignore 추가.
+
+### 확인 필요
+- 가격표 첫 줄 "Quick Brazilian, hard"의 Signature 라벨은 폭이 빠듯해 모바일에서 여전히 다음 줄로 내려감(이번 요청 범위 밖이라 그대로).
+
 ## v0.2.4 · 2026-10-18 (다올 수정)
 - 모바일 히어로: "Quick Waxing Studio · Baegot, Siheung" 줄을 원장 사진 위로(모바일 전용 복제 `.m-kicker`, 원래 줄은 모바일에서 숨김 · PC는 그대로).
 - "우호뷰티는 기술을 시술하고…" + 3줄 설명 여백 축소(제목 위 28→20px · 모바일 14px, 3줄 간격 6→2px, 아래 26→20px).
