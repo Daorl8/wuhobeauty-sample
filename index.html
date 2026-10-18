@@ -233,6 +233,10 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .price dt .en{ white-space:nowrap; }
 .price dd{ margin:0; font-family:var(--disp); font-size:1.25rem; white-space:nowrap; font-variant-numeric:tabular-nums; }
 .price dd small{ font-family:var(--sans); font-size:.78rem; margin-left:2px; }
+/* v0.2.8 가격표 할인 표기 (시그니처 카드와 같은 형식) */
+.price dd.sale{ display:grid; justify-items:end; gap:2px; text-align:right; }
+.price dd.sale .was{ font-family:var(--sans); font-size:.78rem; color:var(--soft); }
+.price dd.sale .now em{ font-style:normal; font-family:var(--sans); font-size:.72rem; font-weight:500; margin-right:6px; vertical-align:2px; padding:1px 6px; background:var(--grad); border:1px solid var(--blush-2); }
 .tag{ display:inline-block; margin-left:8px; padding:1px 8px; background:var(--grad); border:1px solid var(--blush-2); font-size:.64rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; vertical-align:2px; }
 /* Wedding (v0.2 사진 작게 · 구성 표기) */
 .wed{ display:grid; gap:40px; }
@@ -520,7 +524,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           <summary><span class="n">i.</span><span class="t">Brazilian<small>브라질리언</small></span><span class="pm" aria-hidden="true"></span></summary>
           <div class="panel"><div class="panel-in">
             <dl class="price">
-              <div class="row"><dt>Quick Brazilian, hard<span class="tag">Signature</span><small>[하드] 여성 퀵 브라질리언</small></dt><dd>50,000<small>원</small></dd></div>
+              <div class="row"><dt>Quick Brazilian, hard<span class="tag">Signature</span><small>[하드] 여성 퀵 브라질리언</small></dt><dd class="sale"><span class="was">정가 <s>60,000</s></span><span class="now"><em>첫 방문 시</em>50,000<small>원</small></span></dd></div>
               <div class="row"><dt>Low-irritation Brazilian, sugaring<small>[슈가링] 여성 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt>Half &amp; half, hard + sugaring<small>[하드 + 슈가링] 반반 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
               <div class="row"><dt><span class="en">Prenatal Brazilian<span class="tag">Signature</span></span><small>임산부 저자극 브라질리언</small></dt><dd>60,000<small>원</small></dd></div>
@@ -534,8 +538,8 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
           <div class="panel"><div class="panel-in">
             <dl class="price">
               <div class="row"><dt>Thread-line brow design<small>실 디자인 눈썹왁싱</small></dt><dd>30,000<small>원</small></dd></div>
-              <div class="row"><dt><span class="en">Design nape<span class="tag">Signature</span></span><small>디자인 뒷목왁싱</small></dt><dd>40,000<small>원</small></dd></div>
-              <div class="row"><dt>Hairline, forehead &amp; brows<span class="tag">Signature</span><small>헤이눈 왁싱 (헤어라인 + 이마 + 눈썹)</small></dt><dd>60,000<small>원</small></dd></div>
+              <div class="row"><dt><span class="en">Design nape<span class="tag">Signature</span></span><small>디자인 뒷목왁싱</small></dt><dd class="sale"><span class="was">정가 <s>40,000</s></span><span class="now"><em>첫 방문 시</em>30,000<small>원</small></span></dd></div>
+              <div class="row"><dt>Hairline, forehead &amp; brows<span class="tag">Signature</span><small>헤이눈 왁싱 (헤어라인 + 이마 + 눈썹)</small></dt><dd class="sale"><span class="was">정가 <s>90,000</s></span><span class="now"><em>세트 할인가</em>60,000<small>원</small></span></dd></div>
               <div class="row"><dt>Full face + FLOHA 3-step care<small>풀페이스 + 플로하 3STEP 케어</small></dt><dd>100,000<small>원</small></dd></div>
             </dl>
           </div></div>
@@ -558,7 +562,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
       </div>
       <div class="wed-slider reveal" role="region" aria-roledescription="carousel" aria-label="웨딩 사진 슬라이드">
         <div class="ws-track" id="ws-track" tabindex="0">
-          <img loading="lazy" src="wh-wedding.webp" alt="숲길에서 뒷모습으로 걷는 웨딩드레스 차림의 신부" width="1000" height="1249" />
+          <img loading="lazy" src="wh-wedding.webp" alt="숲길에서 뒷모습으로 걷는 웨딩드레스 차림의 신부" width="800" height="999" />
           <img loading="lazy" src="wh-wed1.webp" alt="숲속에서 부케를 든 신부와 신랑" width="800" height="1000" />
           <img loading="lazy" src="wh-wed2.webp" alt="흰 소파에 기대 앉은 웨딩드레스 차림의 신부" width="800" height="1000" />
           <img loading="lazy" src="wh-wed3.webp" alt="야외에서 레이스 웨딩드레스를 입고 앉은 신부" width="800" height="1000" />
