@@ -97,7 +97,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 @media (min-width:900px){ .nav{ display:flex; } }
 
 /* 히어로 (연분홍 그라데이션 빛) */
-.hero{ position:relative; padding:clamp(36px,6vw,80px) 0 clamp(56px,8vw,110px); background:
+.hero{ position:relative; padding:clamp(36px,6vw,80px) 0 clamp(28px,4vw,56px); background:
   radial-gradient(60% 55% at 88% 18%, rgba(244,207,217,.45) 0%, rgba(244,207,217,0) 70%),
   radial-gradient(45% 50% at 8% 92%, rgba(250,228,234,.55) 0%, rgba(250,228,234,0) 70%),
   var(--white); overflow:hidden; }
@@ -111,24 +111,28 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 .profile .name{ margin:0; font-size:1.35rem; font-weight:500; line-height:1.3; }
 .profile .name small{ font-size:.92rem; font-weight:400; color:var(--soft); margin-left:6px; }
 .profile .cred{ margin:6px 0 0; font-size:.86rem; color:var(--soft); }
-.hero h1{ font-family:var(--sans); font-weight:500; font-size:clamp(1.3rem,2.8vw,1.95rem); line-height:1.4; letter-spacing:-.02em; margin:28px 0 0; }
-.points{ margin:18px 0 26px; padding:0; list-style:none; display:grid; gap:6px; font-size:.95rem; }
+.hero h1{ font-family:var(--sans); font-weight:500; font-size:clamp(1.3rem,2.8vw,1.95rem); line-height:1.4; letter-spacing:-.02em; margin:20px 0 0; }
+.points{ margin:12px 0 20px; padding:0; list-style:none; display:grid; gap:2px; font-size:.95rem; line-height:1.65; }
 .points li{ position:relative; padding-left:16px; }
 .points li::before{ content:""; position:absolute; left:0; top:.85em; width:7px; height:1px; background:var(--ink); }
 .cta{ display:flex; flex-wrap:wrap; gap:10px; }
 @media (min-width:600px){ .profile-top img{ width:120px; } }
 
 /* 모바일 전용 원장 사진 (v0.2.3 사장님 2차: 화면 꽉 차게 → 가운데 작게). PC는 작은 증명사진 그대로 */
-.m-portrait{ display:none; }
+.m-portrait, .m-kicker{ display:none; }
 @media (max-width:899px){
-  .hero{ padding-top:28px; }
+  .hero{ padding-top:22px; padding-bottom:28px; }
+  .hero .wrap{ gap:28px; }
+  #pro{ padding-top:48px; }
+  .profile h1{ margin-top:14px; }
   .m-portrait{ display:block; position:relative; margin:0 auto 4px; width:min(58vw,240px); aspect-ratio:4/5; overflow:hidden; background:#BDC2C5; border-radius:4px; border:1px solid var(--line); }
   .m-portrait img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
   .hero .wrap{ margin-top:0; }
-  .profile{ margin-top:16px; padding:0; background:transparent; border:0; border-radius:0; text-align:center; }
+  .profile{ margin-top:10px; padding:0; background:transparent; border:0; border-radius:0; text-align:center; }
   .points{ display:inline-grid; text-align:left; }
   .profile .cta{ justify-content:center; }
-  .hero .kicker{ justify-content:center; font-size:.64rem; letter-spacing:.12em; white-space:nowrap; }
+  .hero .wrap > div > .kicker{ display:none; }
+  .m-kicker{ display:flex !important; justify-content:center; margin:0 0 14px; font-size:.64rem; letter-spacing:.12em; white-space:nowrap; }
   .profile-top{ display:block; }
   .profile-top img{ display:none; }
   .profile .name{ font-size:1.5rem; }
@@ -159,6 +163,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 
 /* 섹션 */
 .sec{ padding:clamp(72px,10vw,140px) 0; }
+#pro{ padding-top:clamp(48px,6vw,80px); }
 .sec.blush{ background:linear-gradient(180deg,var(--white) 0%,var(--blush-soft) 38%,var(--blush-soft) 70%,var(--white) 100%); }
 .sec.glow{ background:var(--grad); }
 .head{ display:grid; gap:18px; margin-bottom:clamp(36px,5vw,64px); }
@@ -186,15 +191,23 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 }
 
 /* 시그니처 3 (v0.2 사진 삭제 · 글 카드) */
-.sig3{ display:grid; gap:18px; }
+.sig3{ display:grid; gap:12px; }
 .sig3 article{ background:var(--white); border:1px solid var(--line); border-radius:4px; display:flex; flex-direction:column; }
-.sig3 .body{ flex:1; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; gap:12px; }
+.sig3 .body{ flex:1; padding:clamp(16px,2vw,22px) clamp(20px,2.4vw,28px) clamp(20px,2.4vw,26px); display:flex; flex-direction:column; gap:8px; }
+.sig3 .ttl{ display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 10px; }
+.sig3 .ttl .tag{ margin-left:0; align-self:center; }
 .sig3 .no{ font-family:var(--disp); color:var(--soft); }
 .sig3 h3{ font-family:var(--sans); font-weight:500; font-size:1.3rem; line-height:1.35; }
 .sig3 p{ margin:0; font-size:.9rem; color:var(--soft); }
 .sig3 p.em{ color:var(--ink); font-weight:500; padding-top:4px; }
 .sig3 .pr{ display:flex; justify-content:space-between; align-items:baseline; padding-top:14px; margin-top:auto; border-top:1px solid var(--line); font-family:var(--disp); font-size:1.3rem; }
 .sig3 .pr small{ font-family:var(--sans); font-size:.78rem; color:var(--soft); }
+.sig3 .pp{ display:grid; justify-items:end; gap:2px; text-align:right; }
+.sig3 .pp .was{ font-family:var(--sans); font-size:.8rem; color:var(--soft); }
+.sig3 .pp .was s{ text-decoration-thickness:1px; }
+.sig3 .pp .now{ font-family:var(--disp); font-size:1.45rem; line-height:1.1; }
+.sig3 .pp .now em{ font-style:normal; font-family:var(--sans); font-size:.76rem; font-weight:500; margin-right:6px; vertical-align:2px; padding:1px 6px; background:var(--grad); border:1px solid var(--blush-2); }
+.sig3 .pp .now small{ font-size:.78rem; color:var(--ink); }
 @media (min-width:900px){ .sig3{ grid-template-columns:repeat(3,1fr); gap:24px; } }
 
 /* 메뉴 */
@@ -351,6 +364,7 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
 <main id="top">
 
   <section class="hero" aria-labelledby="hero-h">
+    <p class="label kicker m-kicker" aria-hidden="true">Quick Waxing Studio · Baegot, Siheung</p>
     <figure class="m-portrait"><img src="wh-owner-lg.webp" alt="우호뷰티 백현민 대표원장" width="900" height="1125" fetchpriority="high" /></figure>
     <div class="wrap">
       <div class="reveal">
@@ -416,32 +430,29 @@ h2{ font-size:clamp(2.1rem,5vw,3.6rem); line-height:1.08; }
       <div class="sig3">
         <article class="reveal">
           <div class="body">
-            <span class="no">01</span>
-            <h3>퀵 브라질리언 왁싱</h3>
+            <div class="ttl"><span class="no">01</span><h3>퀵 브라질리언 왁싱</h3><span class="tag">Signature</span></div>
             <p>숙련된 하드왁싱 테크닉으로 평균 10~15분 내외에 진행하는 우호뷰티의 대표 시술.</p>
             <p>피부 컨디션과 모질, 모량을 고려하여 왁스의 온도와 도포 범위, 제거 타이밍을 조절하고 불필요한 반복 도포를 최소화합니다.</p>
             <p class="em">단순히 빠른 시술이 아닌, 정확한 기술로 완성하는 퀵왁싱</p>
-            <div class="pr"><small>[하드] 여성</small><span>50,000<small>원</small></span></div>
+            <div class="pr"><small>[하드] 여성</small><div class="pp"><span class="was">정가 <s>60,000원</s></span><span class="now"><em>첫 방문 시</em>50,000<small>원</small></span></div></div>
           </div>
         </article>
         <article class="reveal">
           <div class="body">
-            <span class="no">02</span>
-            <h3>디자인 뒷목왁싱</h3>
+            <div class="ttl"><span class="no">02</span><h3>디자인 뒷목왁싱</h3></div>
             <p>단순히 잔머리를 제거하는 것이 아닌, 목선과 모발이 자라는 방향까지 고려한 맞춤형 디자인 왁싱</p>
             <p>C커브•라운드•내추럴 3가지 디자인 중 고객님의 헤어라인과 원하는 스타일에 맞춰 자연스러운 라인을 완성합니다.</p>
             <p class="em">웨딩•면접•촬영 등 중요한 일정을 앞둔 분들께 추천하는 디자인 시술</p>
-            <div class="pr"><small>뒷목</small><span>40,000<small>원</small></span></div>
+            <div class="pr"><small>뒷목</small><div class="pp"><span class="was">정가 <s>40,000원</s></span><span class="now"><em>첫 방문 시</em>30,000<small>원</small></span></div></div>
           </div>
         </article>
         <article class="reveal">
           <div class="body">
-            <span class="no">03</span>
-            <h3>헤이눈 왁싱</h3>
+            <div class="ttl"><span class="no">03</span><h3>헤이눈 왁싱</h3></div>
             <p>헤어라인+이마+눈썹 3가지 부위를 한 번에 관리하는 우호뷰티의 시그니처 페이스 디자인 왁싱</p>
             <p>얼굴형과 모발의 방향, 기존 눈썹 라인을 고려해 전체적인 균형을 맞추고 불필요한 잔털을 정리합니다.</p>
             <p class="em">단순한 제모를 넘어, 얼굴 전체의 인상을 고려한 디테일한 디자인 시술</p>
-            <div class="pr"><small>3부위</small><span>60,000<small>원</small></span></div>
+            <div class="pr"><small>3부위</small><div class="pp"><span class="was">정가 <s>90,000원</s></span><span class="now"><em>세트 할인가</em>60,000<small>원</small></span></div></div>
           </div>
         </article>
       </div>
