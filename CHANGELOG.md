@@ -1,5 +1,8 @@
 # CHANGELOG · 우호뷰티 WUHO BEAUTY (@wuhobeauty_official)
 
+## v0.2.7 · 2026-10-18 (사장님 요청: 더 촘촘하게)
+- 모바일 섹션 위아래 여백 52px → 36px(섹션 사이 합계 약 104px → 72px), 섹션 제목 아래 28px → 24px, 원장 소개 위 36px → 28px. PC는 그대로.
+
 ## v0.2.6 · 2026-10-18 (다올 수정)
 - FLOHA Hard Certified Center 사진 교체: wh-cooling → img/floha.jpg(wh-floha.webp 1000px, "FLOHA ACADEMY" 문구 가운데라 4:3 잘림에도 유지). wh-cooling 미사용 → .assetsignore.
 - **새 섹션 `#maternity`** (아카데미 바로 아래, 같은 틀 · 분홍 면 · 버튼 없음): "FLOHA Maternity / Certified Center." · 플로하 임산부 왁싱 전문 인증점 · "임산부를 위한 전문 교육, 차별화된 왁싱 케어" + 사장님 소개 문단 원문.
