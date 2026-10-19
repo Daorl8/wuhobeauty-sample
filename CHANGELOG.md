@@ -1,5 +1,13 @@
 # CHANGELOG · 우호뷰티 WUHO BEAUTY (@wuhobeauty_official)
 
+## v0.2.12 · 2026-10-19 (다올 수정 · feedback_4)
+- FLOHA Hard Certified Center 사진 교체: feedback_4/849662873… → wh-floha.webp(1000×894, 장갑 낀 손 · 흘러내리는 흰 왁스 · FLOHA ACADEMY 글자). 4:3 크롭이면 아래 "FLOHA ACADEMY" 글자가 잘려 `.aca-top img` 비율을 원본 그대로(aspect-ratio:auto)로.
+- 시그니처 카드 제목 영어 + 아래 작은 한글: Quick Brazilian / 퀵 브라질리언 왁싱 · Design Nape / 디자인 뒷목왁싱 · Hey-Nun / 헤이눈 왁싱(가격표 영문명과 동일). 영문은 WH Display(Gilda) 1.5rem. Signature 라벨은 영문 옆에 두면 모바일에서 줄이 넘어가 한글 이름 옆으로 이동.
+- 모바일 전용 줄바꿈: 리뷰 소개 "…실제 방문자 리뷰예요." 뒤 · 아카데미 소개 "…실무 테크닉." 뒤와 "…노하우까지 나눠요." 뒤.
+- `.assetsignore`에 feedback_4 추가.
+- 시그니처 카드 형광펜 밑줄(`.hl`, 글자 아래 54% 높이 · 분홍 #EDBFCB 60%): 평균 10~15분 내외 · 불필요한 반복 도포 / C커브•라운드•내추럴 / 3가지 부위를 한 번에 · 얼굴 전체의 인상.
+- 대기: FLOHA Maternity 인증패 사진 교체(새 파일이 다운로드 폴더에 있어 접근 불가 → feedback_4로 옮겨 받기로).
+
 ## v0.2.11 · 2026-10-18 (다올 수정)
 - 가격표 헤이눈 줄 Signature 라벨을 이름과 한 줄로: 영문 "Hairline, forehead & brows"(라벨까지 약 300px라 모바일 칸 약 227px에 안 들어감) → "Hey-Nun" + 줄바꿈 금지. 부위 설명은 아래 한글 "헤이눈 왁싱 (헤어라인 + 이마 + 눈썹)"에 그대로.
 
